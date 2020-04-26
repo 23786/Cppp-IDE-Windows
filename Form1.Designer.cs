@@ -286,10 +286,14 @@
             // 
             // OpenFileDialog
             // 
+            this.OpenFileDialog.Filter = "C++ Source File|*.cpp|C Source File|*.c|C++ Source File|*.cxx|C++ Header|*.h|All " +
+    "Files|*.*";
             this.OpenFileDialog.Title = "Open File";
             // 
             // SaveFileDialog
             // 
+            this.SaveFileDialog.Filter = "C++ Source File|*.cpp|C Source File|*.c|C++ Source File|*.cxx|C++ Header|*.h|All " +
+    "Files|*.*";
             this.SaveFileDialog.Title = "Save File";
             // 
             // FileNameLabel
@@ -392,7 +396,6 @@
         private System.Windows.Forms.ToolStripMenuItem OpenFileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem SaveFileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem SaveAsMenuBarItem;
-        private System.Windows.Forms.OpenFileDialog OpenFileDialog;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private System.Windows.Forms.Label FileNameLabel;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
@@ -410,6 +413,7 @@
         private System.Windows.Forms.Label SmallLabel;
         private System.Windows.Forms.Label CompilerLabel;
         private System.Windows.Forms.TextBox CompilerTextBox;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog;
     }
 }
 
