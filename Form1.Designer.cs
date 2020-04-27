@@ -28,25 +28,25 @@
             this.CompileButton = new System.Windows.Forms.Button();
             this.TextView = new System.Windows.Forms.RichTextBox();
             this.MenuBar = new System.Windows.Forms.MenuStrip();
-            this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PreferencesMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HideMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuitMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewFileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveFileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PasteMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UndoMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RedoMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CutMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ViewMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChooseFontMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._CompileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CompileAndRunMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CompileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,29 +56,30 @@
             this.StatusBar = new System.Windows.Forms.TextBox();
             this.SmallLabel = new System.Windows.Forms.Label();
             this.CompilerTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.NewFileLabel = new System.Windows.Forms.Label();
+            this.NewFileExplanation = new System.Windows.Forms.TextBox();
+            this.NewFileBgButton = new System.Windows.Forms.Button();
+            this.OpenFileExplanation = new System.Windows.Forms.TextBox();
+            this.OpenFileLabel = new System.Windows.Forms.Label();
+            this.OpenFileBgButton = new System.Windows.Forms.Button();
+            this.SaveFileExplanation = new System.Windows.Forms.TextBox();
+            this.SaveFileLabel = new System.Windows.Forms.Label();
+            this.SaveFileBgButton = new System.Windows.Forms.Button();
+            this.SaveAsExplanation = new System.Windows.Forms.TextBox();
+            this.SaveAsLabel = new System.Windows.Forms.Label();
+            this.SaveAsBgButton = new System.Windows.Forms.Button();
+            this.SaveAsImage = new System.Windows.Forms.PictureBox();
+            this.SaveFileImage = new System.Windows.Forms.PictureBox();
+            this.OpenFileImage = new System.Windows.Forms.PictureBox();
+            this.NewFileImage = new System.Windows.Forms.PictureBox();
             this.FontDialog = new System.Windows.Forms.FontDialog();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ChangeAppearanceButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveAsImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveFileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OpenFileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewFileImage)).BeginInit();
             this.SuspendLayout();
             // 
             // CompileInfo
@@ -133,30 +134,29 @@
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.White;
-            this.MenuBar.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MenuBar.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cToolStripMenuItem,
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.compileToolStripMenuItem});
+            this.MainMenuBarItem,
+            this.FileMenuBarItem,
+            this.EditMenuBarItem,
+            this.ViewMenuBarItem,
+            this._CompileMenuBarItem});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(1574, 39);
+            this.MenuBar.Size = new System.Drawing.Size(1574, 48);
             this.MenuBar.TabIndex = 5;
             this.MenuBar.Text = "MenuBar";
             // 
-            // cToolStripMenuItem
+            // MainMenuBarItem
             // 
-            this.cToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AboutMenuBarItem,
             this.PreferencesMenuBarItem,
             this.HideMenuBarItem,
             this.QuitMenuBarItem});
-            this.cToolStripMenuItem.Name = "cToolStripMenuItem";
-            this.cToolStripMenuItem.Size = new System.Drawing.Size(104, 35);
-            this.cToolStripMenuItem.Text = "C+++";
+            this.MainMenuBarItem.Name = "MainMenuBarItem";
+            this.MainMenuBarItem.Size = new System.Drawing.Size(104, 44);
+            this.MainMenuBarItem.Text = "C+++";
             // 
             // AboutMenuBarItem
             // 
@@ -187,23 +187,23 @@
             this.QuitMenuBarItem.Text = "Quit";
             this.QuitMenuBarItem.Click += new System.EventHandler(this.QuitMenuBarItem_Click);
             // 
-            // fileToolStripMenuItem
+            // FileMenuBarItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewFileMenuBarItem,
             this.OpenFileMenuBarItem,
             this.SaveFileMenuBarItem,
             this.SaveAsMenuBarItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.ShowShortcutKeys = false;
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(73, 35);
-            this.fileToolStripMenuItem.Text = "File";
+            this.FileMenuBarItem.Name = "FileMenuBarItem";
+            this.FileMenuBarItem.ShowShortcutKeys = false;
+            this.FileMenuBarItem.Size = new System.Drawing.Size(73, 44);
+            this.FileMenuBarItem.Text = "File";
             // 
             // NewFileMenuBarItem
             // 
             this.NewFileMenuBarItem.Name = "NewFileMenuBarItem";
             this.NewFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+N";
-            this.NewFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.NewFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.NewFileMenuBarItem.Text = "New File";
             this.NewFileMenuBarItem.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
@@ -211,7 +211,7 @@
             // 
             this.OpenFileMenuBarItem.Name = "OpenFileMenuBarItem";
             this.OpenFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+O";
-            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.OpenFileMenuBarItem.Text = "Open File";
             this.OpenFileMenuBarItem.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
@@ -219,7 +219,7 @@
             // 
             this.SaveFileMenuBarItem.Name = "SaveFileMenuBarItem";
             this.SaveFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+S";
-            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.SaveFileMenuBarItem.Text = "Save File";
             this.SaveFileMenuBarItem.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
@@ -227,83 +227,83 @@
             // 
             this.SaveAsMenuBarItem.Name = "SaveAsMenuBarItem";
             this.SaveAsMenuBarItem.ShortcutKeyDisplayString = "";
-            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.SaveAsMenuBarItem.Text = "Save As";
             this.SaveAsMenuBarItem.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
-            // editToolStripMenuItem
+            // EditMenuBarItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyMenuBarItem,
             this.PasteMenuBarItem,
             this.UndoMenuBarItem,
             this.RedoMenuBarItem,
             this.CutMenuBarItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.ShowShortcutKeys = false;
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(77, 35);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.EditMenuBarItem.Name = "EditMenuBarItem";
+            this.EditMenuBarItem.ShowShortcutKeys = false;
+            this.EditMenuBarItem.Size = new System.Drawing.Size(77, 44);
+            this.EditMenuBarItem.Text = "Edit";
             // 
             // CopyMenuBarItem
             // 
             this.CopyMenuBarItem.Name = "CopyMenuBarItem";
             this.CopyMenuBarItem.ShowShortcutKeys = false;
-            this.CopyMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.CopyMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.CopyMenuBarItem.Text = "Copy";
             this.CopyMenuBarItem.Click += new System.EventHandler(this.CopyMenuBarItem_Click);
             // 
             // PasteMenuBarItem
             // 
             this.PasteMenuBarItem.Name = "PasteMenuBarItem";
-            this.PasteMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.PasteMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.PasteMenuBarItem.Text = "Paste";
             this.PasteMenuBarItem.Click += new System.EventHandler(this.PasteMenuBarItem_Click);
             // 
             // UndoMenuBarItem
             // 
             this.UndoMenuBarItem.Name = "UndoMenuBarItem";
-            this.UndoMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.UndoMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.UndoMenuBarItem.Text = "Undo";
             this.UndoMenuBarItem.Click += new System.EventHandler(this.UndoMenuBarItem_Click);
             // 
             // RedoMenuBarItem
             // 
             this.RedoMenuBarItem.Name = "RedoMenuBarItem";
-            this.RedoMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.RedoMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.RedoMenuBarItem.Text = "Redo";
             this.RedoMenuBarItem.Click += new System.EventHandler(this.RedoMenuBarItem_Click);
             // 
             // CutMenuBarItem
             // 
             this.CutMenuBarItem.Name = "CutMenuBarItem";
-            this.CutMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.CutMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.CutMenuBarItem.Text = "Cut";
             this.CutMenuBarItem.Click += new System.EventHandler(this.CutMenuBarItem_Click);
             // 
-            // viewToolStripMenuItem
+            // ViewMenuBarItem
             // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChooseFontMenuBarItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(89, 35);
-            this.viewToolStripMenuItem.Text = "View";
+            this.ViewMenuBarItem.Name = "ViewMenuBarItem";
+            this.ViewMenuBarItem.Size = new System.Drawing.Size(89, 44);
+            this.ViewMenuBarItem.Text = "View";
             // 
             // ChooseFontMenuBarItem
             // 
             this.ChooseFontMenuBarItem.Name = "ChooseFontMenuBarItem";
-            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(307, 44);
+            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.ChooseFontMenuBarItem.Text = "Choose a font";
             this.ChooseFontMenuBarItem.Click += new System.EventHandler(this.ChooseFontMenuBarItem_Click);
             // 
-            // compileToolStripMenuItem
+            // _CompileMenuBarItem
             // 
-            this.compileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._CompileMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CompileAndRunMenuBarItem,
             this.CompileMenuBarItem,
             this.RunMenuBarItem});
-            this.compileToolStripMenuItem.Name = "compileToolStripMenuItem";
-            this.compileToolStripMenuItem.Size = new System.Drawing.Size(128, 35);
-            this.compileToolStripMenuItem.Text = "Compile";
+            this._CompileMenuBarItem.Name = "_CompileMenuBarItem";
+            this._CompileMenuBarItem.Size = new System.Drawing.Size(128, 44);
+            this._CompileMenuBarItem.Text = "Compile";
             // 
             // CompileAndRunMenuBarItem
             // 
@@ -353,12 +353,11 @@
             this.StatusBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StatusBar.BackColor = System.Drawing.SystemColors.Control;
             this.StatusBar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.StatusBar.Enabled = false;
             this.StatusBar.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.StatusBar.ForeColor = System.Drawing.Color.Black;
             this.StatusBar.Location = new System.Drawing.Point(1166, 103);
             this.StatusBar.Multiline = true;
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.ReadOnly = true;
             this.StatusBar.Size = new System.Drawing.Size(380, 43);
             this.StatusBar.TabIndex = 8;
             this.StatusBar.Text = "0 Lines | 0 Characters";
@@ -388,225 +387,217 @@
             this.CompilerTextBox.Text = "g++.exe";
             this.CompilerTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
+            // NewFileLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(1308, 343);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 36);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "New File";
-            this.label1.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
+            this.NewFileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewFileLabel.AutoSize = true;
+            this.NewFileLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.NewFileLabel.Location = new System.Drawing.Point(1308, 343);
+            this.NewFileLabel.Name = "NewFileLabel";
+            this.NewFileLabel.Size = new System.Drawing.Size(129, 36);
+            this.NewFileLabel.TabIndex = 14;
+            this.NewFileLabel.Text = "New File";
+            this.NewFileLabel.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
-            // textBox1
+            // NewFileExplanation
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(1313, 383);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(190, 69);
-            this.textBox1.TabIndex = 20;
-            this.textBox1.Text = "Create a new C++ source file\r\n";
-            this.textBox1.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
+            this.NewFileExplanation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewFileExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.NewFileExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.NewFileExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.NewFileExplanation.Location = new System.Drawing.Point(1313, 383);
+            this.NewFileExplanation.Multiline = true;
+            this.NewFileExplanation.Name = "NewFileExplanation";
+            this.NewFileExplanation.Size = new System.Drawing.Size(190, 69);
+            this.NewFileExplanation.TabIndex = 20;
+            this.NewFileExplanation.Text = "Create a new C++ source file\r\n";
+            this.NewFileExplanation.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
-            // button2
+            // NewFileBgButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(1166, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(380, 137);
-            this.button2.TabIndex = 21;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
+            this.NewFileBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewFileBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.NewFileBgButton.FlatAppearance.BorderSize = 0;
+            this.NewFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.NewFileBgButton.Location = new System.Drawing.Point(1166, 328);
+            this.NewFileBgButton.Name = "NewFileBgButton";
+            this.NewFileBgButton.Size = new System.Drawing.Size(380, 137);
+            this.NewFileBgButton.TabIndex = 21;
+            this.NewFileBgButton.UseVisualStyleBackColor = false;
+            this.NewFileBgButton.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
-            // textBox2
+            // OpenFileExplanation
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox2.Location = new System.Drawing.Point(1313, 536);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(218, 69);
-            this.textBox2.TabIndex = 24;
-            this.textBox2.Text = "Open an exsisting C++ file\r\n\r\n";
-            this.textBox2.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
+            this.OpenFileExplanation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenFileExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.OpenFileExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OpenFileExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.OpenFileExplanation.Location = new System.Drawing.Point(1313, 536);
+            this.OpenFileExplanation.Multiline = true;
+            this.OpenFileExplanation.Name = "OpenFileExplanation";
+            this.OpenFileExplanation.Size = new System.Drawing.Size(218, 69);
+            this.OpenFileExplanation.TabIndex = 24;
+            this.OpenFileExplanation.Text = "Open an exsisting C++ file\r\n\r\n";
+            this.OpenFileExplanation.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
-            // label2
+            // OpenFileLabel
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(1308, 496);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 36);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Open File";
-            this.label2.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
+            this.OpenFileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenFileLabel.AutoSize = true;
+            this.OpenFileLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.OpenFileLabel.Location = new System.Drawing.Point(1308, 496);
+            this.OpenFileLabel.Name = "OpenFileLabel";
+            this.OpenFileLabel.Size = new System.Drawing.Size(142, 36);
+            this.OpenFileLabel.TabIndex = 22;
+            this.OpenFileLabel.Text = "Open File";
+            this.OpenFileLabel.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
-            // button3
+            // OpenFileBgButton
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(1166, 481);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(380, 137);
-            this.button3.TabIndex = 25;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
+            this.OpenFileBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenFileBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.OpenFileBgButton.FlatAppearance.BorderSize = 0;
+            this.OpenFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.OpenFileBgButton.Location = new System.Drawing.Point(1166, 481);
+            this.OpenFileBgButton.Name = "OpenFileBgButton";
+            this.OpenFileBgButton.Size = new System.Drawing.Size(380, 137);
+            this.OpenFileBgButton.TabIndex = 25;
+            this.OpenFileBgButton.UseVisualStyleBackColor = false;
+            this.OpenFileBgButton.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
-            // textBox3
+            // SaveFileExplanation
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox3.Location = new System.Drawing.Point(1313, 688);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(190, 69);
-            this.textBox3.TabIndex = 28;
-            this.textBox3.Text = "Save the current C++ file";
-            this.textBox3.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
+            this.SaveFileExplanation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveFileExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveFileExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SaveFileExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveFileExplanation.Location = new System.Drawing.Point(1313, 688);
+            this.SaveFileExplanation.Multiline = true;
+            this.SaveFileExplanation.Name = "SaveFileExplanation";
+            this.SaveFileExplanation.Size = new System.Drawing.Size(190, 69);
+            this.SaveFileExplanation.TabIndex = 28;
+            this.SaveFileExplanation.Text = "Save the current C++ file";
+            this.SaveFileExplanation.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
-            // label3
+            // SaveFileLabel
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(1308, 648);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 36);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Save File";
-            this.label3.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
+            this.SaveFileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveFileLabel.AutoSize = true;
+            this.SaveFileLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveFileLabel.Location = new System.Drawing.Point(1308, 648);
+            this.SaveFileLabel.Name = "SaveFileLabel";
+            this.SaveFileLabel.Size = new System.Drawing.Size(130, 36);
+            this.SaveFileLabel.TabIndex = 26;
+            this.SaveFileLabel.Text = "Save File";
+            this.SaveFileLabel.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
-            // button4
+            // SaveFileBgButton
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(1166, 633);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(380, 137);
-            this.button4.TabIndex = 29;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
+            this.SaveFileBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveFileBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveFileBgButton.FlatAppearance.BorderSize = 0;
+            this.SaveFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveFileBgButton.Location = new System.Drawing.Point(1166, 633);
+            this.SaveFileBgButton.Name = "SaveFileBgButton";
+            this.SaveFileBgButton.Size = new System.Drawing.Size(380, 137);
+            this.SaveFileBgButton.TabIndex = 29;
+            this.SaveFileBgButton.UseVisualStyleBackColor = false;
+            this.SaveFileBgButton.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
-            // textBox4
+            // SaveAsExplanation
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox4.Location = new System.Drawing.Point(1313, 841);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(190, 69);
-            this.textBox4.TabIndex = 32;
-            this.textBox4.Text = "Duplicate the current C++ file";
-            this.textBox4.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
+            this.SaveAsExplanation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveAsExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveAsExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SaveAsExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveAsExplanation.Location = new System.Drawing.Point(1313, 841);
+            this.SaveAsExplanation.Multiline = true;
+            this.SaveAsExplanation.Name = "SaveAsExplanation";
+            this.SaveAsExplanation.Size = new System.Drawing.Size(190, 69);
+            this.SaveAsExplanation.TabIndex = 32;
+            this.SaveAsExplanation.Text = "Duplicate the current C++ file";
+            this.SaveAsExplanation.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
-            // label4
+            // SaveAsLabel
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(1308, 801);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 36);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Save As";
-            this.label4.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
+            this.SaveAsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveAsLabel.AutoSize = true;
+            this.SaveAsLabel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveAsLabel.Location = new System.Drawing.Point(1308, 801);
+            this.SaveAsLabel.Name = "SaveAsLabel";
+            this.SaveAsLabel.Size = new System.Drawing.Size(118, 36);
+            this.SaveAsLabel.TabIndex = 30;
+            this.SaveAsLabel.Text = "Save As";
+            this.SaveAsLabel.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
-            // button5
+            // SaveAsBgButton
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(1166, 786);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(380, 137);
-            this.button5.TabIndex = 33;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
+            this.SaveAsBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveAsBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveAsBgButton.FlatAppearance.BorderSize = 0;
+            this.SaveAsBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveAsBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SaveAsBgButton.Location = new System.Drawing.Point(1166, 786);
+            this.SaveAsBgButton.Name = "SaveAsBgButton";
+            this.SaveAsBgButton.Size = new System.Drawing.Size(380, 137);
+            this.SaveAsBgButton.TabIndex = 33;
+            this.SaveAsBgButton.UseVisualStyleBackColor = false;
+            this.SaveAsBgButton.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
-            // pictureBox4
+            // SaveAsImage
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox4.Image = global::C____Windows_.Properties.Resources.DuplicateFile;
-            this.pictureBox4.Location = new System.Drawing.Point(1184, 800);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(109, 104);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 31;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
+            this.SaveAsImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveAsImage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveAsImage.Image = global::C____Windows_.Properties.Resources.DuplicateFile;
+            this.SaveAsImage.Location = new System.Drawing.Point(1184, 800);
+            this.SaveAsImage.Name = "SaveAsImage";
+            this.SaveAsImage.Size = new System.Drawing.Size(109, 104);
+            this.SaveAsImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SaveAsImage.TabIndex = 31;
+            this.SaveAsImage.TabStop = false;
+            this.SaveAsImage.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
-            // pictureBox3
+            // SaveFileImage
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox3.Image = global::C____Windows_.Properties.Resources.SaveFile;
-            this.pictureBox3.Location = new System.Drawing.Point(1184, 647);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 104);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 27;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
+            this.SaveFileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SaveFileImage.Image = global::C____Windows_.Properties.Resources.SaveFile;
+            this.SaveFileImage.Location = new System.Drawing.Point(1184, 647);
+            this.SaveFileImage.Name = "SaveFileImage";
+            this.SaveFileImage.Size = new System.Drawing.Size(109, 104);
+            this.SaveFileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SaveFileImage.TabIndex = 27;
+            this.SaveFileImage.TabStop = false;
+            this.SaveFileImage.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
-            // pictureBox1
+            // OpenFileImage
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Image = global::C____Windows_.Properties.Resources.OpenFile;
-            this.pictureBox1.Location = new System.Drawing.Point(1184, 495);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
+            this.OpenFileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.OpenFileImage.Image = global::C____Windows_.Properties.Resources.OpenFile;
+            this.OpenFileImage.Location = new System.Drawing.Point(1184, 495);
+            this.OpenFileImage.Name = "OpenFileImage";
+            this.OpenFileImage.Size = new System.Drawing.Size(109, 104);
+            this.OpenFileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.OpenFileImage.TabIndex = 23;
+            this.OpenFileImage.TabStop = false;
+            this.OpenFileImage.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
-            // pictureBox2
+            // NewFileImage
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox2.Image = global::C____Windows_.Properties.Resources.NewFile;
-            this.pictureBox2.Location = new System.Drawing.Point(1184, 342);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 104);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
+            this.NewFileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.NewFileImage.Image = global::C____Windows_.Properties.Resources.NewFile;
+            this.NewFileImage.Location = new System.Drawing.Point(1184, 342);
+            this.NewFileImage.Name = "NewFileImage";
+            this.NewFileImage.Size = new System.Drawing.Size(109, 104);
+            this.NewFileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NewFileImage.TabIndex = 16;
+            this.NewFileImage.TabStop = false;
+            this.NewFileImage.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
             // FontDialog
             // 
@@ -625,26 +616,42 @@
             this.panel1.Size = new System.Drawing.Size(53, 667);
             this.panel1.TabIndex = 34;
             // 
+            // ChangeAppearanceButton
+            // 
+            this.ChangeAppearanceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChangeAppearanceButton.BackColor = System.Drawing.SystemColors.Control;
+            this.ChangeAppearanceButton.BackgroundImage = global::C____Windows_.Properties.Resources.SwitchAppearance;
+            this.ChangeAppearanceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ChangeAppearanceButton.FlatAppearance.BorderSize = 0;
+            this.ChangeAppearanceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangeAppearanceButton.Location = new System.Drawing.Point(1498, 250);
+            this.ChangeAppearanceButton.Name = "ChangeAppearanceButton";
+            this.ChangeAppearanceButton.Size = new System.Drawing.Size(48, 35);
+            this.ChangeAppearanceButton.TabIndex = 35;
+            this.ChangeAppearanceButton.UseVisualStyleBackColor = false;
+            this.ChangeAppearanceButton.Click += new System.EventHandler(this.ChangeAppearanceButton_Click);
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1574, 1029);
+            this.Controls.Add(this.ChangeAppearanceButton);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.SaveAsExplanation);
+            this.Controls.Add(this.SaveAsImage);
+            this.Controls.Add(this.SaveAsLabel);
+            this.Controls.Add(this.SaveAsBgButton);
+            this.Controls.Add(this.SaveFileExplanation);
+            this.Controls.Add(this.SaveFileImage);
+            this.Controls.Add(this.SaveFileLabel);
+            this.Controls.Add(this.SaveFileBgButton);
+            this.Controls.Add(this.OpenFileExplanation);
+            this.Controls.Add(this.OpenFileImage);
+            this.Controls.Add(this.OpenFileLabel);
+            this.Controls.Add(this.OpenFileBgButton);
+            this.Controls.Add(this.NewFileExplanation);
+            this.Controls.Add(this.NewFileImage);
+            this.Controls.Add(this.NewFileLabel);
             this.Controls.Add(this.CompilerTextBox);
             this.Controls.Add(this.SmallLabel);
             this.Controls.Add(this.StatusBar);
@@ -653,7 +660,7 @@
             this.Controls.Add(this.CompileButton);
             this.Controls.Add(this.CompileInfo);
             this.Controls.Add(this.MenuBar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.NewFileBgButton);
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuBar;
@@ -663,10 +670,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.MenuBar.ResumeLayout(false);
             this.MenuBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveAsImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveFileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OpenFileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NewFileImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,23 +689,23 @@
         private System.Windows.Forms.Button CompileButton;
         private System.Windows.Forms.RichTextBox TextView;
         private System.Windows.Forms.MenuStrip MenuBar;
-        private System.Windows.Forms.ToolStripMenuItem cToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MainMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem AboutMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem PreferencesMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem QuitMenuBarItem;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem NewFileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem OpenFileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem SaveFileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem SaveAsMenuBarItem;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private System.Windows.Forms.Label FileNameLabel;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EditMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem CopyMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem PasteMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem UndoMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem RedoMenuBarItem;
-        private System.Windows.Forms.ToolStripMenuItem compileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _CompileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem CompileAndRunMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem CompileMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem RunMenuBarItem;
@@ -708,26 +715,27 @@
         private System.Windows.Forms.Label SmallLabel;
         private System.Windows.Forms.TextBox CompilerTextBox;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.Label NewFileLabel;
+        private System.Windows.Forms.PictureBox NewFileImage;
+        private System.Windows.Forms.TextBox NewFileExplanation;
+        private System.Windows.Forms.Button NewFileBgButton;
+        private System.Windows.Forms.TextBox OpenFileExplanation;
+        private System.Windows.Forms.PictureBox OpenFileImage;
+        private System.Windows.Forms.Label OpenFileLabel;
+        private System.Windows.Forms.Button OpenFileBgButton;
+        private System.Windows.Forms.TextBox SaveFileExplanation;
+        private System.Windows.Forms.PictureBox SaveFileImage;
+        private System.Windows.Forms.Label SaveFileLabel;
+        private System.Windows.Forms.Button SaveFileBgButton;
+        private System.Windows.Forms.TextBox SaveAsExplanation;
+        private System.Windows.Forms.PictureBox SaveAsImage;
+        private System.Windows.Forms.Label SaveAsLabel;
+        private System.Windows.Forms.Button SaveAsBgButton;
+        private System.Windows.Forms.ToolStripMenuItem ViewMenuBarItem;
         private System.Windows.Forms.ToolStripMenuItem ChooseFontMenuBarItem;
         private System.Windows.Forms.FontDialog FontDialog;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button ChangeAppearanceButton;
     }
 }
 

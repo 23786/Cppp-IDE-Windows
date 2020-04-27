@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Drawing;
 using System.Windows.Forms;
+using System;
 
 namespace C____Windows_ {
 
@@ -29,8 +30,10 @@ namespace C____Windows_ {
             "abs", "sqrt", "atof", "atoi", "system", "qsort", "freopen", "fclose",
             "endl", "stdin", "stdout"
         };
+
         Hashtable keywords = new Hashtable();
         Hashtable stantard = new Hashtable();
+
         private void KeywordsInitialize() {
             foreach (string s in keyword) {
                 keywords.Add(s, "1");
@@ -51,12 +54,11 @@ namespace C____Windows_ {
             int SelectionStart = TextView.SelectionStart;
             int SelectionLength = TextView.SelectionLength;
 
-            tmpTextView.Rtf = this.TextView.Rtf;
-
+            tmpTextView.Text = this.TextView.Text;
             tmpTextView.SelectAll();
-            tmpTextView.SelectionColor = Color.Black;
+            tmpTextView.SelectionColor = NormalCodeColor;
             tmpTextView.SelectionFont = new Font(FontName, FontSize, FontStyle.Regular);
-            tmpTextView.Text.Replace("\t", "    ");
+
             string[] everyLine = tmpTextView.Text.Split('\n');
             int pos = 0, lineNo = 0;
             foreach (string currentLine in everyLine) {
@@ -70,7 +72,7 @@ namespace C____Windows_ {
                     if (currentLine.Trim().StartsWith("//")) {
                         tmpTextView.Select(pos, currentLine.Length);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = Color.Gray;
+                        tmpTextView.SelectionColor = CommentColor;
                         pos += currentLine.Length + 1;
                         continue;
                     }
@@ -79,7 +81,7 @@ namespace C____Windows_ {
                     if (currentLine.Trim().StartsWith("#")) {
                         tmpTextView.Select(pos, currentLine.Length);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = Color.Purple;
+                        tmpTextView.SelectionColor = PreColor;
                         pos += currentLine.Length + 1;
                         continue;
                     }
@@ -129,7 +131,7 @@ namespace C____Windows_ {
                                 || currentLine[i] == '>' || currentLine[i] == '|'
                                 || currentLine[i] == '!' || currentLine[i] == '%') {
                                 tmpTextView.Select(pos + i, 1);
-                                tmpTextView.SelectionColor = Color.Blue;
+                                tmpTextView.SelectionColor = SymbolColor;
                             }
                         }
                     }
@@ -161,14 +163,14 @@ namespace C____Windows_ {
                                 if (keywords[currentWord] != null) {
                                     tmpTextView.Select(pos + x, currentWord.Length);
                                     tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Bold));
-                                    tmpTextView.SelectionColor = Color.DarkOrange;
+                                    tmpTextView.SelectionColor = KeyWordColor;
                                 }
 
                                 // 常用库函数
                                 if (stantard[currentWord] != null) {
                                     tmpTextView.Select(pos + x, currentWord.Length);
                                     tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                                    tmpTextView.SelectionColor = Color.Brown;
+                                    tmpTextView.SelectionColor = FunctionColor;
                                 }
                             }
                             x += currentWord.Length + 1;
@@ -180,14 +182,16 @@ namespace C____Windows_ {
                         string[] pa = px.Split(',');
                         tmpTextView.Select(pos + int.Parse(pa[0]), int.Parse(pa[1]) - int.Parse(pa[0]) + 1);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = Color.OrangeRed;
+                        tmpTextView.SelectionColor = StringColor;
                     }
 
                 }
                 pos += currentLine.Length + 1;
                 lineNo += 1;
             }
+            this.TextView.TextChanged -= new EventHandler(TextView_TextChanged);
             TextView.Rtf = tmpTextView.Rtf;
+            this.TextView.TextChanged += new EventHandler(TextView_TextChanged);
             TextView.Select(SelectionStart, SelectionLength);
         }
     }

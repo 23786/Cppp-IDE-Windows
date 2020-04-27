@@ -172,7 +172,6 @@ namespace C____Windows_ {
 
         private void PasteMenuBarItem_Click(object sender, EventArgs e) {
             TextView.Paste();
-            RichHighlight(0);
         }
 
         private void UndoMenuBarItem_Click(object sender, EventArgs e) {
@@ -260,6 +259,14 @@ namespace C____Windows_ {
 
         private void TextView_Resize(object sender, EventArgs e) {
             showLineNo();
+        }
+
+        private void ChangeAppearanceButton_Click(object sender, EventArgs e) {
+            if (Appearance) {
+                SwitchToLightMode();
+            } else {
+                SwitchToDarkMode();
+            }
         }
     }
 }

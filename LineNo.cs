@@ -22,7 +22,7 @@ namespace C____Windows_ {
             //准备画图
             Graphics g = this.panel1.CreateGraphics();
             Font font = new Font(this.TextView.Font, this.TextView.Font.Style);
-            SolidBrush brush = new SolidBrush(Color.Black);
+            SolidBrush brush = new SolidBrush(NormalCodeColor);
 
             //画图开始
 
@@ -31,7 +31,7 @@ namespace C____Windows_ {
             Rectangle rect = this.panel1.ClientRectangle;
             brush.Color = this.panel1.BackColor;
             g.FillRectangle(brush, 0, 0, this.panel1.ClientRectangle.Width, this.panel1.ClientRectangle.Height);
-            brush.Color = Color.Black;//重置画笔颜色
+            brush.Color = NormalCodeColor;//重置画笔颜色
 
             //绘制行号
 
