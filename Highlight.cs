@@ -58,14 +58,15 @@ namespace C____Windows_ {
             tmpTextView.SelectionFont = new Font(FontName, FontSize, FontStyle.Regular);
             tmpTextView.Text.Replace("\t", "    ");
             string[] everyLine = tmpTextView.Text.Split('\n');
-            int pos = 0;
-            int lnum = 0;
+            int pos = 0, lineNo = 0;
             foreach (string currentLine in everyLine) {
-                if (lnum >= start) {
+                if (lineNo >= start) {
                     string replacedCurrentLine = currentLine.Replace("(", " ").Replace(")", " ").Replace(">", " ");
                     replacedCurrentLine = replacedCurrentLine.Replace("[", " ").Replace("]", " ").Replace("<", " ");
                     replacedCurrentLine = replacedCurrentLine.Replace("{", " ").Replace("}", " ").Replace(":", " ");
                     replacedCurrentLine = replacedCurrentLine.Replace(".", " ").Replace("=", " ").Replace(";", " ");
+
+                    // 注释
                     if (currentLine.Trim().StartsWith("//")) {
                         tmpTextView.Select(pos, currentLine.Length);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
@@ -73,6 +74,8 @@ namespace C____Windows_ {
                         pos += currentLine.Length + 1;
                         continue;
                     }
+
+                    // 预处理
                     if (currentLine.Trim().StartsWith("#")) {
                         tmpTextView.Select(pos, currentLine.Length);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
@@ -80,35 +83,70 @@ namespace C____Windows_ {
                         pos += currentLine.Length + 1;
                         continue;
                     }
+
+
+                    // 新建一个字符串数组，然后把当前行出现的所有的双引号所包住的内容存储在里面
+                    // 格式为"<开始的位置>,<结束的位置>"
                     ArrayList marks = new ArrayList();
                     string smark = "";
                     string last = "";
-                    bool inmark = false;
+                    bool isInQuote = false;
                     for (int i = 0; i < replacedCurrentLine.Length; i += 1) {
                         if (replacedCurrentLine.Substring(i, 1) == "\"" && last != "\\") {
-                            if (inmark) {
+                            if (isInQuote) {
                                 marks.Add(smark + "," + i);
                                 smark = "";
-                                inmark = false;
+                                isInQuote = false;
                             } else {
                                 smark += i;
-                                inmark = true;
+                                isInQuote = true;
                             }
                         }
                         last = replacedCurrentLine.Substring(i, 1);
                     }
-                    if (inmark) {
+                    if (isInQuote) {
                         marks.Add(smark + "," + replacedCurrentLine.Length);
                     }
 
+
+
+
+                    // 标点符号 
+                    for (int i = 0; i < currentLine.Length; i += 1) {
+                        bool find = false;
+                        foreach (string px in marks) {
+                            string[] pa = px.Split(',');
+                            if (i >= int.Parse(pa[0]) && i < int.Parse(pa[1])) {
+                                find = true;
+                                break;
+                            }
+                        }
+                        if (!find) {
+                            if (currentLine[i] == '+' || currentLine[i] == '-'
+                                || currentLine[i] == '/' || currentLine[i] == '*'
+                                || currentLine[i] == '=' || currentLine[i] == '&'
+                                || currentLine[i] == '^' || currentLine[i] == '<'
+                                || currentLine[i] == '>' || currentLine[i] == '|'
+                                || currentLine[i] == '!' || currentLine[i] == '%') {
+                                tmpTextView.Select(pos + i, 1);
+                                tmpTextView.SelectionColor = Color.Blue;
+                            }
+                        }
+                    }
+
+
+
+
                     string[] everyWord = replacedCurrentLine.Split(' ', '\t');
                     int x = 0;
-                    foreach (string tv in everyWord) {
-                        if (tv.Length < 2) {
-                            x += tv.Length + 1;
+                    foreach (string currentWord in everyWord) {
+                        if (currentWord.Length < 2) {
+                            x += currentWord.Length + 1;
                             continue;
                         } else {
                             bool find = false;
+
+                            // 判断这个字符串是否被双引号包住
                             foreach (string px in marks) {
                                 string[] pa = px.Split(',');
                                 if (x >= int.Parse(pa[0]) && x < int.Parse(pa[1])) {
@@ -116,30 +154,38 @@ namespace C____Windows_ {
                                     break;
                                 }
                             }
+
                             if (!find) {
-                                if (keywords[tv] != null) {
-                                    tmpTextView.Select(pos + x, tv.Length);
+
+                                // 关键字
+                                if (keywords[currentWord] != null) {
+                                    tmpTextView.Select(pos + x, currentWord.Length);
                                     tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Bold));
                                     tmpTextView.SelectionColor = Color.DarkOrange;
                                 }
-                                if (stantard[tv] != null) {
-                                    tmpTextView.Select(pos + x, tv.Length);
+
+                                // 常用库函数
+                                if (stantard[currentWord] != null) {
+                                    tmpTextView.Select(pos + x, currentWord.Length);
                                     tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
                                     tmpTextView.SelectionColor = Color.Brown;
                                 }
                             }
-                            x += tv.Length + 1;
+                            x += currentWord.Length + 1;
                         }
                     }
+
+                    // 被引号包住的内容
                     foreach (string px in marks) {
                         string[] pa = px.Split(',');
                         tmpTextView.Select(pos + int.Parse(pa[0]), int.Parse(pa[1]) - int.Parse(pa[0]) + 1);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
                         tmpTextView.SelectionColor = Color.OrangeRed;
                     }
+
                 }
                 pos += currentLine.Length + 1;
-                lnum += 1;
+                lineNo += 1;
             }
             TextView.Rtf = tmpTextView.Rtf;
             TextView.Select(SelectionStart, SelectionLength);
