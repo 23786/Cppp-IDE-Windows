@@ -4,7 +4,13 @@ using System.Windows.Forms;
 
 namespace C____Windows_ {
 
+
     public partial class Form1 : Form {
+
+
+        public void print(string str, string terminator = "\n") {
+            Console.Write(str + terminator);
+        }
 
         private void showLineNo() {
 
@@ -25,27 +31,22 @@ namespace C____Windows_ {
             SolidBrush brush = new SolidBrush(NormalCodeColor);
 
             //画图开始
-
-            //刷新画布
-
             Rectangle rect = this.panel1.ClientRectangle;
             brush.Color = this.panel1.BackColor;
             g.FillRectangle(brush, 0, 0, this.panel1.ClientRectangle.Width, this.panel1.ClientRectangle.Height);
-            brush.Color = NormalCodeColor;//重置画笔颜色
-
-            //绘制行号
+            brush.Color = NormalCodeColor;
 
             int lineSpace;
 
             if (crntFirstLine != crntLastLine) {
                 lineSpace = (crntLastPos.Y - crntFirstPos.Y) / (crntLastLine - crntFirstLine);
             } else {
-                lineSpace = Convert.ToInt32(this.TextView.Font.Size);
+                lineSpace = Convert.ToInt32(this.TextView.Font.Height);
             }
 
             int brushX = this.panel1.ClientRectangle.Width - Convert.ToInt32(font.Size * 3) - 15;
-            int brushY = crntLastPos.Y + Convert.ToInt32(font.Size * 0.21f); // 惊人的算法啊！！
-
+            int brushY = crntLastPos.Y + Convert.ToInt32(font.Size * 0.21f);
+            print("lineSpace=" + lineSpace.ToString());
             for (int i = crntLastLine + 1; i >= crntFirstLine; i -= 1) {
                 if (i == 0) break;
                 g.DrawString(i.ToString(), font, brush, brushX, brushY);

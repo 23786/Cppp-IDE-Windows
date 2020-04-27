@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Threading;
 
 namespace C____Windows_ {
 
-    public partial class Form1: Form {
+    public partial class Form1 : Form {
 
         bool Appearance = false;
 
@@ -85,6 +86,7 @@ namespace C____Windows_ {
 
             RichHighlight(0);
             showLineNo();
+
 
         }
 

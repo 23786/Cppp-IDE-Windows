@@ -134,6 +134,7 @@
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.White;
+            this.MenuBar.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MenuBar.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainMenuBarItem,
@@ -418,7 +419,9 @@
             this.NewFileBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NewFileBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.NewFileBgButton.FlatAppearance.BorderSize = 0;
-            this.NewFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewFileBgButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlLight;
+            this.NewFileBgButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
+            this.NewFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NewFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.NewFileBgButton.Location = new System.Drawing.Point(1166, 328);
             this.NewFileBgButton.Name = "NewFileBgButton";
@@ -458,7 +461,7 @@
             this.OpenFileBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenFileBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.OpenFileBgButton.FlatAppearance.BorderSize = 0;
-            this.OpenFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OpenFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.OpenFileBgButton.Location = new System.Drawing.Point(1166, 481);
             this.OpenFileBgButton.Name = "OpenFileBgButton";
@@ -498,7 +501,7 @@
             this.SaveFileBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveFileBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveFileBgButton.FlatAppearance.BorderSize = 0;
-            this.SaveFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SaveFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SaveFileBgButton.Location = new System.Drawing.Point(1166, 633);
             this.SaveFileBgButton.Name = "SaveFileBgButton";
@@ -538,7 +541,7 @@
             this.SaveAsBgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveAsBgButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveAsBgButton.FlatAppearance.BorderSize = 0;
-            this.SaveAsBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveAsBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SaveAsBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SaveAsBgButton.Location = new System.Drawing.Point(1166, 786);
             this.SaveAsBgButton.Name = "SaveAsBgButton";
@@ -633,6 +636,9 @@
             // 
             // Form1
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1574, 1029);
             this.Controls.Add(this.ChangeAppearanceButton);

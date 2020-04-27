@@ -20,8 +20,11 @@ namespace C____Windows_ {
             newForm.Text = path;
             newForm.RichHighlight(0);
             newForm.CountCharacters();
-            newForm.Show();
+            if (Appearance) {
+                newForm.SwitchToDarkMode();
+            }
             newForm.showLineNo();
+            newForm.Show();
 
 
         }
@@ -118,7 +121,15 @@ namespace C____Windows_ {
             InitializeComponent();
             KeywordsInitialize();
             if (fileName != null) {
-                OpenFile(fileName);
+                this.TextView.Clear();
+                this.TextView.Text = File.ReadAllText(fileName);
+                this.FileNameLabel.Text = fileName;
+                this.FileName = fileName;
+                this.Text = fileName;
+                this.RichHighlight(0);
+                this.CountCharacters();
+                this.Show();
+                this.showLineNo();
             }
         }
 
@@ -142,6 +153,9 @@ namespace C____Windows_ {
 
         private void NewFileMenuBarItem_Click(object sender, EventArgs e) {
             Form1 newForm = new Form1(null);
+            if (Appearance) {
+                newForm.SwitchToDarkMode();
+            }
             newForm.Show();
         }
 
@@ -267,6 +281,7 @@ namespace C____Windows_ {
             } else {
                 SwitchToDarkMode();
             }
+            showLineNo();
         }
     }
 }
