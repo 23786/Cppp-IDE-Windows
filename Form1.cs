@@ -21,10 +21,11 @@ namespace C____Windows_ {
             newForm.RichHighlight(0);
             newForm.CountCharacters();
             newForm.Show();
+            newForm.showLineNo();
 
-            
+
         }
-        
+
         private void CountCharacters() {
             this.StatusBar.Text = this.TextView.Lines.Length.ToString() + " Lines | " + this.TextView.TextLength.ToString() + " Characters";
         }
@@ -200,6 +201,7 @@ namespace C____Windows_ {
             
             RichHighlight(0);
             CountCharacters();
+            showLineNo();
             
         }
 
@@ -242,6 +244,22 @@ namespace C____Windows_ {
 
         private void CutMenuBarItem_Click(object sender, EventArgs e) {
             TextView.Cut();
+        }
+
+        private void ChooseFontMenuBarItem_Click(object sender, EventArgs e) {
+            if (FontDialog.ShowDialog() == DialogResult.OK) {
+                FontName = FontDialog.Font.Name;
+                FontSize = FontDialog.Font.Size;
+                RichHighlight(0);
+            }
+        }
+
+        private void TextView_VScroll(object sender, EventArgs e) {
+            showLineNo();
+        }
+
+        private void TextView_Resize(object sender, EventArgs e) {
+            showLineNo();
         }
     }
 }

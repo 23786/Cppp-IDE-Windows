@@ -7,6 +7,8 @@ namespace C____Windows_ {
     public partial class Form1 {
 
         RichTextBox tmpTextView = new RichTextBox();
+        string FontName = "Consolas";
+        float FontSize = 10.0F;
 
 
         string[] keyword = {
@@ -24,7 +26,8 @@ namespace C____Windows_ {
             "fout", "sprintf", "sscanf", "strlen", "strcmp", "strcpy", "memcpy",
             "sort", "swap", "memset", "pow", "gets", "puts", "cos", "tan",
             "sin", "floor", "toupper", "tolower", "getline", "min", "max",
-            "abs", "sqrt", "atof", "atoi", "system", "qsort", "freopen", "fclose"
+            "abs", "sqrt", "atof", "atoi", "system", "qsort", "freopen", "fclose",
+            "endl", "stdin", "stdout"
         };
         Hashtable keywords = new Hashtable();
         Hashtable stantard = new Hashtable();
@@ -36,6 +39,7 @@ namespace C____Windows_ {
                 stantard.Add(s, "1");
             }
         }
+
 
         /// <summary>
         /// C++语法高亮
@@ -51,37 +55,37 @@ namespace C____Windows_ {
 
             tmpTextView.SelectAll();
             tmpTextView.SelectionColor = Color.Black;
-            tmpTextView.SelectionFont = new Font("Consolas", 10, FontStyle.Regular);
+            tmpTextView.SelectionFont = new Font(FontName, FontSize, FontStyle.Regular);
             tmpTextView.Text.Replace("\t", "    ");
-            string[] ln = tmpTextView.Text.Split('\n');
+            string[] everyLine = tmpTextView.Text.Split('\n');
             int pos = 0;
             int lnum = 0;
-            foreach (string lv in ln) {
+            foreach (string currentLine in everyLine) {
                 if (lnum >= start) {
-                    string ts = lv.Replace("(", " ").Replace(")", " ").Replace(">", " ");
-                    ts = ts.Replace("[", " ").Replace("]", " ").Replace("<", " ");
-                    ts = ts.Replace("{", " ").Replace("}", " ").Replace(":", " ");
-                    ts = ts.Replace(".", " ").Replace("=", " ").Replace(";", " ");
-                    if (lv.Trim().StartsWith("//")) {
-                        tmpTextView.Select(pos, lv.Length);
-                        tmpTextView.SelectionFont = new Font("Consolas", 10, (FontStyle.Regular));
+                    string replacedCurrentLine = currentLine.Replace("(", " ").Replace(")", " ").Replace(">", " ");
+                    replacedCurrentLine = replacedCurrentLine.Replace("[", " ").Replace("]", " ").Replace("<", " ");
+                    replacedCurrentLine = replacedCurrentLine.Replace("{", " ").Replace("}", " ").Replace(":", " ");
+                    replacedCurrentLine = replacedCurrentLine.Replace(".", " ").Replace("=", " ").Replace(";", " ");
+                    if (currentLine.Trim().StartsWith("//")) {
+                        tmpTextView.Select(pos, currentLine.Length);
+                        tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
                         tmpTextView.SelectionColor = Color.Gray;
-                        pos += lv.Length + 1;
+                        pos += currentLine.Length + 1;
                         continue;
                     }
-                    if (lv.Trim().StartsWith("#")) {
-                        tmpTextView.Select(pos, lv.Length);
-                        tmpTextView.SelectionFont = new Font("Consolas", 10, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = Color.Green;
-                        pos += lv.Length + 1;
+                    if (currentLine.Trim().StartsWith("#")) {
+                        tmpTextView.Select(pos, currentLine.Length);
+                        tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
+                        tmpTextView.SelectionColor = Color.Purple;
+                        pos += currentLine.Length + 1;
                         continue;
                     }
                     ArrayList marks = new ArrayList();
                     string smark = "";
                     string last = "";
                     bool inmark = false;
-                    for (int i = 0; i < ts.Length; i++) {
-                        if (ts.Substring(i, 1) == "\"" && last != "\\") {
+                    for (int i = 0; i < replacedCurrentLine.Length; i += 1) {
+                        if (replacedCurrentLine.Substring(i, 1) == "\"" && last != "\\") {
                             if (inmark) {
                                 marks.Add(smark + "," + i);
                                 smark = "";
@@ -91,15 +95,15 @@ namespace C____Windows_ {
                                 inmark = true;
                             }
                         }
-                        last = ts.Substring(i, 1);
+                        last = replacedCurrentLine.Substring(i, 1);
                     }
                     if (inmark) {
-                        marks.Add(smark + "," + ts.Length);
+                        marks.Add(smark + "," + replacedCurrentLine.Length);
                     }
 
-                    string[] ta = ts.Split(' ', '\t');
+                    string[] everyWord = replacedCurrentLine.Split(' ', '\t');
                     int x = 0;
-                    foreach (string tv in ta) {
+                    foreach (string tv in everyWord) {
                         if (tv.Length < 2) {
                             x += tv.Length + 1;
                             continue;
@@ -115,13 +119,13 @@ namespace C____Windows_ {
                             if (!find) {
                                 if (keywords[tv] != null) {
                                     tmpTextView.Select(pos + x, tv.Length);
-                                    tmpTextView.SelectionFont = new Font("Consolas", 10, (FontStyle.Bold));
-                                    tmpTextView.SelectionColor = Color.Blue;
+                                    tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Bold));
+                                    tmpTextView.SelectionColor = Color.DarkOrange;
                                 }
                                 if (stantard[tv] != null) {
                                     tmpTextView.Select(pos + x, tv.Length);
-                                    tmpTextView.SelectionFont = new Font("Consolas", 10, (FontStyle.Regular));
-                                    tmpTextView.SelectionColor = Color.Purple;
+                                    tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
+                                    tmpTextView.SelectionColor = Color.Brown;
                                 }
                             }
                             x += tv.Length + 1;
@@ -130,18 +134,15 @@ namespace C____Windows_ {
                     foreach (string px in marks) {
                         string[] pa = px.Split(',');
                         tmpTextView.Select(pos + int.Parse(pa[0]), int.Parse(pa[1]) - int.Parse(pa[0]) + 1);
-                        tmpTextView.SelectionFont = new Font("Consolas", 10, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = Color.DarkRed;
+                        tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
+                        tmpTextView.SelectionColor = Color.OrangeRed;
                     }
                 }
-                pos += lv.Length + 1;
-                lnum++;
+                pos += currentLine.Length + 1;
+                lnum += 1;
             }
-            // 设置一下，才能恢复；后续正确！
             TextView.Rtf = tmpTextView.Rtf;
             TextView.Select(SelectionStart, SelectionLength);
-            //tmpTextView.SelectionFont = new Font("Consolas", 10, (FontStyle.Regular));
-            //tmpTextView.SelectionColor = Color.Black;
         }
     }
 }

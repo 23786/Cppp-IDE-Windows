@@ -55,6 +55,9 @@
     <Compile Include="Highlight.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LineNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -94,6 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="OpenFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpppicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
