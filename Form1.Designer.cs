@@ -136,7 +136,6 @@
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.White;
-            this.MenuBar.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MenuBar.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainMenuBarItem,
@@ -146,7 +145,7 @@
             this._CompileMenuBarItem});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(1574, 48);
+            this.MenuBar.Size = new System.Drawing.Size(1574, 39);
             this.MenuBar.TabIndex = 5;
             this.MenuBar.Text = "MenuBar";
             // 
@@ -158,7 +157,7 @@
             this.HideMenuBarItem,
             this.QuitMenuBarItem});
             this.MainMenuBarItem.Name = "MainMenuBarItem";
-            this.MainMenuBarItem.Size = new System.Drawing.Size(104, 44);
+            this.MainMenuBarItem.Size = new System.Drawing.Size(104, 35);
             this.MainMenuBarItem.Text = "C+++";
             // 
             // AboutMenuBarItem
@@ -199,7 +198,7 @@
             this.SaveAsMenuBarItem});
             this.FileMenuBarItem.Name = "FileMenuBarItem";
             this.FileMenuBarItem.ShowShortcutKeys = false;
-            this.FileMenuBarItem.Size = new System.Drawing.Size(73, 44);
+            this.FileMenuBarItem.Size = new System.Drawing.Size(73, 35);
             this.FileMenuBarItem.Text = "File";
             // 
             // NewFileMenuBarItem
@@ -244,7 +243,7 @@
             this.CutMenuBarItem});
             this.EditMenuBarItem.Name = "EditMenuBarItem";
             this.EditMenuBarItem.ShowShortcutKeys = false;
-            this.EditMenuBarItem.Size = new System.Drawing.Size(77, 44);
+            this.EditMenuBarItem.Size = new System.Drawing.Size(77, 35);
             this.EditMenuBarItem.Text = "Edit";
             // 
             // CopyMenuBarItem
@@ -288,7 +287,7 @@
             this.ViewMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChooseFontMenuBarItem});
             this.ViewMenuBarItem.Name = "ViewMenuBarItem";
-            this.ViewMenuBarItem.Size = new System.Drawing.Size(89, 44);
+            this.ViewMenuBarItem.Size = new System.Drawing.Size(89, 35);
             this.ViewMenuBarItem.Text = "View";
             // 
             // ChooseFontMenuBarItem
@@ -305,7 +304,7 @@
             this.CompileMenuBarItem,
             this.RunMenuBarItem});
             this._CompileMenuBarItem.Name = "_CompileMenuBarItem";
-            this._CompileMenuBarItem.Size = new System.Drawing.Size(128, 44);
+            this._CompileMenuBarItem.Size = new System.Drawing.Size(128, 35);
             this._CompileMenuBarItem.Text = "Compile";
             // 
             // CompileAndRunMenuBarItem
@@ -595,7 +594,8 @@
             // 
             this.NewFileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NewFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.NewFileImage.Image = global::C____Windows_.Properties.Resources.NewFile;
+            this.NewFileImage.BackgroundImage = global::C____Windows_.Properties.Resources.NewFile;
+            this.NewFileImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.NewFileImage.Location = new System.Drawing.Point(1184, 342);
             this.NewFileImage.Name = "NewFileImage";
             this.NewFileImage.Size = new System.Drawing.Size(109, 104);
@@ -638,8 +638,8 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1574, 1029);
