@@ -12,7 +12,7 @@ namespace C____Windows_ {
     public partial class Form1 : Form {
 
         bool Appearance = false;
-
+        
         Color NormalCodeColor = Color.Black;
         Color KeyWordColor = Color.DarkOrange;
         Color SymbolColor = Color.Blue;

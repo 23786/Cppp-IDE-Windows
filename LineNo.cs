@@ -8,8 +8,11 @@ namespace C____Windows_ {
     public partial class Form1 : Form {
 
 
-        public void print(string str, string terminator = "\n") {
-            Console.Write(str + terminator);
+        public void print(params object[] items) {
+            foreach  (object i in items) {
+                Console.Write(i.ToString() + " ");
+            }
+            Console.Write("\n");
         }
 
         private void showLineNo() {
@@ -46,7 +49,6 @@ namespace C____Windows_ {
 
             int brushX = this.panel1.ClientRectangle.Width - Convert.ToInt32(font.Size * 3) - 15;
             int brushY = crntLastPos.Y + Convert.ToInt32(font.Size * 0.21f);
-            print("lineSpace=" + lineSpace.ToString());
             for (int i = crntLastLine + 1; i >= crntFirstLine; i -= 1) {
                 if (i == 0) break;
                 g.DrawString(i.ToString(), font, brush, brushX, brushY);

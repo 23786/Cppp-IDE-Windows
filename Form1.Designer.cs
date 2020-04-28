@@ -126,7 +126,9 @@
             this.TextView.Size = new System.Drawing.Size(1078, 667);
             this.TextView.TabIndex = 0;
             this.TextView.Text = "";
+            this.TextView.SelectionChanged += new System.EventHandler(this.TextView_SelectionChanged);
             this.TextView.VScroll += new System.EventHandler(this.TextView_VScroll);
+            this.TextView.Click += new System.EventHandler(this.TextView_Click);
             this.TextView.TextChanged += new System.EventHandler(this.TextView_TextChanged);
             this.TextView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextView_KeyDown);
             this.TextView.Resize += new System.EventHandler(this.TextView_Resize);
@@ -204,7 +206,7 @@
             // 
             this.NewFileMenuBarItem.Name = "NewFileMenuBarItem";
             this.NewFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+N";
-            this.NewFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.NewFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
             this.NewFileMenuBarItem.Text = "New File";
             this.NewFileMenuBarItem.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
@@ -212,7 +214,7 @@
             // 
             this.OpenFileMenuBarItem.Name = "OpenFileMenuBarItem";
             this.OpenFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+O";
-            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
             this.OpenFileMenuBarItem.Text = "Open File";
             this.OpenFileMenuBarItem.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
@@ -220,7 +222,7 @@
             // 
             this.SaveFileMenuBarItem.Name = "SaveFileMenuBarItem";
             this.SaveFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+S";
-            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
             this.SaveFileMenuBarItem.Text = "Save File";
             this.SaveFileMenuBarItem.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
@@ -228,7 +230,7 @@
             // 
             this.SaveAsMenuBarItem.Name = "SaveAsMenuBarItem";
             this.SaveAsMenuBarItem.ShortcutKeyDisplayString = "";
-            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(349, 44);
             this.SaveAsMenuBarItem.Text = "Save As";
             this.SaveAsMenuBarItem.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
@@ -249,35 +251,35 @@
             // 
             this.CopyMenuBarItem.Name = "CopyMenuBarItem";
             this.CopyMenuBarItem.ShowShortcutKeys = false;
-            this.CopyMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.CopyMenuBarItem.Size = new System.Drawing.Size(210, 44);
             this.CopyMenuBarItem.Text = "Copy";
             this.CopyMenuBarItem.Click += new System.EventHandler(this.CopyMenuBarItem_Click);
             // 
             // PasteMenuBarItem
             // 
             this.PasteMenuBarItem.Name = "PasteMenuBarItem";
-            this.PasteMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.PasteMenuBarItem.Size = new System.Drawing.Size(210, 44);
             this.PasteMenuBarItem.Text = "Paste";
             this.PasteMenuBarItem.Click += new System.EventHandler(this.PasteMenuBarItem_Click);
             // 
             // UndoMenuBarItem
             // 
             this.UndoMenuBarItem.Name = "UndoMenuBarItem";
-            this.UndoMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.UndoMenuBarItem.Size = new System.Drawing.Size(210, 44);
             this.UndoMenuBarItem.Text = "Undo";
             this.UndoMenuBarItem.Click += new System.EventHandler(this.UndoMenuBarItem_Click);
             // 
             // RedoMenuBarItem
             // 
             this.RedoMenuBarItem.Name = "RedoMenuBarItem";
-            this.RedoMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.RedoMenuBarItem.Size = new System.Drawing.Size(210, 44);
             this.RedoMenuBarItem.Text = "Redo";
             this.RedoMenuBarItem.Click += new System.EventHandler(this.RedoMenuBarItem_Click);
             // 
             // CutMenuBarItem
             // 
             this.CutMenuBarItem.Name = "CutMenuBarItem";
-            this.CutMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.CutMenuBarItem.Size = new System.Drawing.Size(210, 44);
             this.CutMenuBarItem.Text = "Cut";
             this.CutMenuBarItem.Click += new System.EventHandler(this.CutMenuBarItem_Click);
             // 
@@ -292,7 +294,7 @@
             // ChooseFontMenuBarItem
             // 
             this.ChooseFontMenuBarItem.Name = "ChooseFontMenuBarItem";
-            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(307, 44);
             this.ChooseFontMenuBarItem.Text = "Choose a font";
             this.ChooseFontMenuBarItem.Click += new System.EventHandler(this.ChooseFontMenuBarItem_Click);
             // 
