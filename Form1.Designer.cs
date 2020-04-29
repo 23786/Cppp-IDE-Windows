@@ -129,6 +129,7 @@
             this.TextView.Size = new System.Drawing.Size(1078, 667);
             this.TextView.TabIndex = 0;
             this.TextView.Text = "";
+            this.TextView.WordWrap = false;
             this.TextView.SelectionChanged += new System.EventHandler(this.TextView_SelectionChanged);
             this.TextView.VScroll += new System.EventHandler(this.TextView_VScroll);
             this.TextView.Click += new System.EventHandler(this.TextView_Click);

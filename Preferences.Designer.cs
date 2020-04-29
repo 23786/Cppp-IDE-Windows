@@ -275,7 +275,7 @@
             // SaveButton
             // 
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SaveButton.Location = new System.Drawing.Point(713, 20);
+            this.SaveButton.Location = new System.Drawing.Point(657, 20);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(132, 52);
             this.SaveButton.TabIndex = 12;
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 675);
+            this.ClientSize = new System.Drawing.Size(850, 675);
             this.ControlBox = false;
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.label3);
@@ -299,6 +299,8 @@
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(876, 746);
+            this.MinimumSize = new System.Drawing.Size(876, 746);
             this.Name = "Preferences";
             this.Text = "Preferences";
             this.panel1.ResumeLayout(false);
