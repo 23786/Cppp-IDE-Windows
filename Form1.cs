@@ -6,7 +6,53 @@ using System.Drawing;
 
 namespace C____Windows_ {
     
-    public partial class Form1 : Form { 
+    public partial class Form1 : Form, PreferencesDelegate {
+
+        // PreferencesDelegate
+        public void didSetColor() {
+
+            var config = ConfigFile.LoadOrCreateFile("C+++Config.config");
+
+            Color lkc = ColorFromString(config.GetConfigValue("LightKeywordColor"));
+            Color dkc = ColorFromString(config.GetConfigValue("DarkKeywordColor"));
+            Color lncc = ColorFromString(config.GetConfigValue("LightNormalCodeColor"));
+            Color dncc = ColorFromString(config.GetConfigValue("DarkNormalCodeColor"));
+            Color lsc = ColorFromString(config.GetConfigValue("LightSymbolColor"));
+            Color dsc = ColorFromString(config.GetConfigValue("DarkSymbolColor"));
+            Color lpc = ColorFromString(config.GetConfigValue("LightPreprocessorColor"));
+            Color dpc = ColorFromString(config.GetConfigValue("DarkPreprocessorColor"));
+            Color lfc = ColorFromString(config.GetConfigValue("LightBuiltInColor"));
+            Color dfc = ColorFromString(config.GetConfigValue("DarkBuiltInColor"));
+            Color lstrc = ColorFromString(config.GetConfigValue("LightStringColor"));
+            Color dstrc = ColorFromString(config.GetConfigValue("DarkStringColor"));
+            Color lcc = ColorFromString(config.GetConfigValue("LightCommentColor"));
+            Color dcc = ColorFromString(config.GetConfigValue("DarkCommentColor"));
+
+            Color ColorFromString(string a) {
+                return ColorTranslator.FromHtml(a);
+            }
+
+            if (Appearance == false) {
+                NormalCodeColor = new CDColor(lncc, lncc, dncc);
+                KeyWordColor = new CDColor(lkc, lkc, dkc);
+                SymbolColor = new CDColor(lsc, lsc, dsc);
+                FunctionColor = new CDColor(lfc, lfc, dfc);
+                PreColor = new CDColor(lpc, lpc, dpc);
+                StringColor = new CDColor(lstrc, lstrc, dstrc);
+                CommentColor = new CDColor(lcc, lcc, dcc);
+            } else {
+                NormalCodeColor = new CDColor(dncc, lncc, dncc);
+                KeyWordColor = new CDColor(dkc, lkc, dkc);
+                SymbolColor = new CDColor(dsc, lsc, dsc);
+                FunctionColor = new CDColor(dfc, lfc, dfc);
+                PreColor = new CDColor(dpc, lpc, dpc);
+                StringColor = new CDColor(dstrc, lstrc, dstrc);
+                CommentColor = new CDColor(dcc, lcc, dcc);
+            }
+
+            RichHighlight(0);
+
+        }
 
         private string FileName = "Untitled";
         private bool Compiled = false;
@@ -363,6 +409,76 @@ namespace C____Windows_ {
             } catch {
                 return;
             }
+        }
+
+        private void GitHubMenuBarItem_Click(object sender, EventArgs e) {
+            Process.Start("https://GitHub.com/23786/Cppp-IDE-Windows");
+        }
+
+        private void WebsiteMenuBarItem_Click(object sender, EventArgs e) {
+            Process.Start("https://ericnth.cn/cppp-ide-macos");
+        }
+
+        // viewDidLoad
+        private void Form1_Load(object sender, EventArgs e) {
+
+            var config = ConfigFile.LoadOrCreateFile("C+++Config.config");
+
+            if (config.GetConfigValue("ConfigFileCreated") == "") {
+
+                config.AddOrSetConfigValue("ConfigFileCreated", "Created");
+
+                config.AddOrSetConfigValue("LightKeywordColor", "#FF8C00");
+                config.AddOrSetConfigValue("LightBuiltInColor", "#A52A2A");
+                config.AddOrSetConfigValue("LightSymbolColor", "#0000FF");
+                config.AddOrSetConfigValue("LightPreprocessorColor", "#800080");
+                config.AddOrSetConfigValue("LightStringColor", "#FF4500");
+                config.AddOrSetConfigValue("LightCommentColor", "#808080");
+                config.AddOrSetConfigValue("LightNormalCodeColor", "#000000");
+
+                config.AddOrSetConfigValue("DarkKeywordColor", "#ADD8E6");
+                config.AddOrSetConfigValue("DarkBuiltInColor", "#FF0000");
+                config.AddOrSetConfigValue("DarkSymbolColor", "#FFC0CB");
+                config.AddOrSetConfigValue("DarkPreprocessorColor", "#FFA500");
+                config.AddOrSetConfigValue("DarkStringColor", "#F08080");
+                config.AddOrSetConfigValue("DarkCommentColor", "#808080");
+                config.AddOrSetConfigValue("DarkNormalCodeColor", "#FFFFFF");
+
+            }
+
+            Color lkc = ColorFromString(config.GetConfigValue("LightKeywordColor"));
+            Color dkc = ColorFromString(config.GetConfigValue("DarkKeywordColor"));
+            Color lncc = ColorFromString(config.GetConfigValue("LightNormalCodeColor"));
+            Color dncc = ColorFromString(config.GetConfigValue("DarkNormalCodeColor"));
+            Color lsc = ColorFromString(config.GetConfigValue("LightSymbolColor"));
+            Color dsc = ColorFromString(config.GetConfigValue("DarkSymbolColor"));
+            Color lpc = ColorFromString(config.GetConfigValue("LightPreprocessorColor"));
+            Color dpc = ColorFromString(config.GetConfigValue("DarkPreprocessorColor"));
+            Color lfc = ColorFromString(config.GetConfigValue("LightBuiltInColor"));
+            Color dfc = ColorFromString(config.GetConfigValue("DarkBuiltInColor"));
+            Color lstrc = ColorFromString(config.GetConfigValue("LightStringColor"));
+            Color dstrc = ColorFromString(config.GetConfigValue("DarkStringColor"));
+            Color lcc = ColorFromString(config.GetConfigValue("LightCommentColor"));
+            Color dcc = ColorFromString(config.GetConfigValue("DarkCommentColor"));
+
+            Color ColorFromString(string a) {
+                return ColorTranslator.FromHtml(a);
+            }
+
+            NormalCodeColor = new CDColor(lncc, lncc, dncc);
+            KeyWordColor = new CDColor(lkc, lkc, dkc);
+            SymbolColor = new CDColor(lsc, lsc, dsc);
+            FunctionColor = new CDColor(lfc, lfc, dfc);
+            PreColor = new CDColor(lpc, lpc, dpc);
+            StringColor = new CDColor(lstrc, lstrc, dstrc);
+            CommentColor = new CDColor(lcc, lcc, dcc);
+
+        }
+
+        private void PreferencesMenuBarItem_Click(object sender, EventArgs e) {
+            var vc = new Preferences();
+            vc.Delegate = this;
+            vc.Show();
         }
     }
 }

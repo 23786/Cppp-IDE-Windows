@@ -50,6 +50,9 @@
             this.CompileAndRunMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CompileMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RunMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GitHubMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WebsiteMenuBarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.FileNameLabel = new System.Windows.Forms.Label();
@@ -136,13 +139,15 @@
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.White;
+            this.MenuBar.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MenuBar.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainMenuBarItem,
             this.FileMenuBarItem,
             this.EditMenuBarItem,
             this.ViewMenuBarItem,
-            this._CompileMenuBarItem});
+            this._CompileMenuBarItem,
+            this.helpToolStripMenuItem});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Size = new System.Drawing.Size(1574, 39);
@@ -173,6 +178,7 @@
             this.PreferencesMenuBarItem.ShortcutKeyDisplayString = "Ctrl+,";
             this.PreferencesMenuBarItem.Size = new System.Drawing.Size(378, 44);
             this.PreferencesMenuBarItem.Text = "Preferences...";
+            this.PreferencesMenuBarItem.Click += new System.EventHandler(this.PreferencesMenuBarItem_Click);
             // 
             // HideMenuBarItem
             // 
@@ -205,7 +211,7 @@
             // 
             this.NewFileMenuBarItem.Name = "NewFileMenuBarItem";
             this.NewFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+N";
-            this.NewFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.NewFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.NewFileMenuBarItem.Text = "New File";
             this.NewFileMenuBarItem.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
@@ -213,7 +219,7 @@
             // 
             this.OpenFileMenuBarItem.Name = "OpenFileMenuBarItem";
             this.OpenFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+O";
-            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.OpenFileMenuBarItem.Text = "Open File";
             this.OpenFileMenuBarItem.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
@@ -221,7 +227,7 @@
             // 
             this.SaveFileMenuBarItem.Name = "SaveFileMenuBarItem";
             this.SaveFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+S";
-            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.SaveFileMenuBarItem.Text = "Save File";
             this.SaveFileMenuBarItem.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
@@ -229,7 +235,7 @@
             // 
             this.SaveAsMenuBarItem.Name = "SaveAsMenuBarItem";
             this.SaveAsMenuBarItem.ShortcutKeyDisplayString = "";
-            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(349, 44);
+            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.SaveAsMenuBarItem.Text = "Save As";
             this.SaveAsMenuBarItem.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
@@ -293,7 +299,7 @@
             // ChooseFontMenuBarItem
             // 
             this.ChooseFontMenuBarItem.Name = "ChooseFontMenuBarItem";
-            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(307, 44);
+            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(359, 44);
             this.ChooseFontMenuBarItem.Text = "Choose a font";
             this.ChooseFontMenuBarItem.Click += new System.EventHandler(this.ChooseFontMenuBarItem_Click);
             // 
@@ -327,6 +333,29 @@
             this.RunMenuBarItem.Size = new System.Drawing.Size(450, 44);
             this.RunMenuBarItem.Text = "Run";
             this.RunMenuBarItem.Click += new System.EventHandler(this.RunMenuBarItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GitHubMenuBarItem,
+            this.WebsiteMenuBarItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(88, 35);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // GitHubMenuBarItem
+            // 
+            this.GitHubMenuBarItem.Name = "GitHubMenuBarItem";
+            this.GitHubMenuBarItem.Size = new System.Drawing.Size(463, 44);
+            this.GitHubMenuBarItem.Text = "View this project on GitHub";
+            this.GitHubMenuBarItem.Click += new System.EventHandler(this.GitHubMenuBarItem_Click);
+            // 
+            // WebsiteMenuBarItem
+            // 
+            this.WebsiteMenuBarItem.Name = "WebsiteMenuBarItem";
+            this.WebsiteMenuBarItem.Size = new System.Drawing.Size(463, 44);
+            this.WebsiteMenuBarItem.Text = "View the website of C+++";
+            this.WebsiteMenuBarItem.Click += new System.EventHandler(this.WebsiteMenuBarItem_Click);
             // 
             // OpenFileDialog
             // 
@@ -676,6 +705,7 @@
             this.Name = "Form1";
             this.Text = "Untitled";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.MenuBar.ResumeLayout(false);
             this.MenuBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveAsImage)).EndInit();
@@ -689,10 +719,6 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox CompileInfo;
         private System.Windows.Forms.Button CompileButton;
         private System.Windows.Forms.RichTextBox TextView;
@@ -744,6 +770,9 @@
         private System.Windows.Forms.FontDialog FontDialog;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ChangeAppearanceButton;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GitHubMenuBarItem;
+        private System.Windows.Forms.ToolStripMenuItem WebsiteMenuBarItem;
     }
 }
 

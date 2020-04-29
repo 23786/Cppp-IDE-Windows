@@ -74,7 +74,7 @@ namespace C____Windows_ {
 
             tmpTextView.Text = this.TextView.Text;
             tmpTextView.SelectAll();
-            tmpTextView.SelectionColor = NormalCodeColor;
+            tmpTextView.SelectionColor = NormalCodeColor.CurrColor;
             tmpTextView.SelectionFont = new Font(FontName, FontSize, FontStyle.Regular);
 
             string[] everyLine = tmpTextView.Text.Split('\n');
@@ -90,7 +90,7 @@ namespace C____Windows_ {
                     if (currentLine.Trim().StartsWith("//")) {
                         tmpTextView.Select(pos, currentLine.Length);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = CommentColor;
+                        tmpTextView.SelectionColor = CommentColor.CurrColor;
                         pos += currentLine.Length + 1;
                         continue;
                     }
@@ -99,7 +99,7 @@ namespace C____Windows_ {
                     if (currentLine.Trim().StartsWith("#")) {
                         tmpTextView.Select(pos, currentLine.Length);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = PreColor;
+                        tmpTextView.SelectionColor = PreColor.CurrColor;
                         pos += currentLine.Length + 1;
                         continue;
                     }
@@ -149,7 +149,7 @@ namespace C____Windows_ {
                                 || currentLine[i] == '>' || currentLine[i] == '|'
                                 || currentLine[i] == '!' || currentLine[i] == '%') {
                                 tmpTextView.Select(pos + i, 1);
-                                tmpTextView.SelectionColor = SymbolColor;
+                                tmpTextView.SelectionColor = SymbolColor.CurrColor;
                             }
                         }
                     }
@@ -181,14 +181,14 @@ namespace C____Windows_ {
                                 if (keywords[currentWord] != null) {
                                     tmpTextView.Select(pos + x, currentWord.Length);
                                     tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Bold));
-                                    tmpTextView.SelectionColor = KeyWordColor;
+                                    tmpTextView.SelectionColor = KeyWordColor.CurrColor;
                                 }
 
                                 // 常用库函数
                                 if (stantard[currentWord] != null) {
                                     tmpTextView.Select(pos + x, currentWord.Length);
                                     tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                                    tmpTextView.SelectionColor = FunctionColor;
+                                    tmpTextView.SelectionColor = FunctionColor.CurrColor;
                                 }
                             }
                             x += currentWord.Length + 1;
@@ -200,7 +200,7 @@ namespace C____Windows_ {
                         string[] pa = px.Split(',');
                         tmpTextView.Select(pos + int.Parse(pa[0]), int.Parse(pa[1]) - int.Parse(pa[0]) + 1);
                         tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = StringColor;
+                        tmpTextView.SelectionColor = StringColor.CurrColor;
                     }
 
                 }
@@ -213,163 +213,5 @@ namespace C____Windows_ {
             TextView.Select(SelectionStart, SelectionLength);
         }
 
-
-        /*private void Highlight() {
-
-            tmpTextView.Font = new Font(FontName, FontSize, FontStyle.Regular);
-
-
-            // 记录一开始的选中位置和长度
-            int SelectionStart = TextView.SelectionStart;
-            int LineIndex = TextView.GetLineFromCharIndex(SelectionStart);             
-            int StartIndex = TextView.GetFirstCharIndexFromLine(LineIndex);
-            int SelectionLength = TextView.SelectionLength;
-
-            tmpTextView.Rtf = this.TextView.Rtf;
-            try {
-                tmpTextView.Select(StartIndex, TextView.Lines[LineIndex].Length);
-                print(StartIndex, TextView.Lines[LineIndex].Length);
-            } catch(Exception ex) {
-                print(ex.Message);
-                return;
-            }
-            tmpTextView.SelectionColor = NormalCodeColor;
-            tmpTextView.SelectionFont = new Font(FontName, FontSize, FontStyle.Regular);
-
-            string[] everyLine = tmpTextView.Lines;
-            int pos = 0, lineNo = 0;
-            foreach (string currentLine in everyLine) {
-                if (lineNo == LineIndex - 1 || lineNo == LineIndex || lineNo == LineIndex + 1) {
-                    string replacedCurrentLine = currentLine.Replace("(", " ").Replace(")", " ").Replace(">", " ");
-                    replacedCurrentLine = replacedCurrentLine.Replace("[", " ").Replace("]", " ").Replace("<", " ");
-                    replacedCurrentLine = replacedCurrentLine.Replace("{", " ").Replace("}", " ").Replace(":", " ");
-                    replacedCurrentLine = replacedCurrentLine.Replace(".", " ").Replace("=", " ").Replace(";", " ");
-
-                    // 注释
-                    if (currentLine.Trim().StartsWith("//")) {
-                        tmpTextView.Select(pos, currentLine.Length);
-                        tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = CommentColor;
-                        pos += currentLine.Length + 1;
-                        continue;
-                    }
-
-                    // 预处理
-                    if (currentLine.Trim().StartsWith("#")) {
-                        tmpTextView.Select(pos, currentLine.Length);
-                        tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = PreColor;
-                        pos += currentLine.Length + 1;
-                        continue;
-                    }
-
-
-                    // 新建一个字符串数组，然后把当前行出现的所有的双引号所包住的内容存储在里面
-                    // 格式为"<开始的位置>,<结束的位置>"
-                    ArrayList marks = new ArrayList();
-                    string smark = "";
-                    string last = "";
-                    bool isInQuote = false;
-                    for (int i = 0; i < replacedCurrentLine.Length; i += 1) {
-                        if (replacedCurrentLine.Substring(i, 1) == "\"" && last != "\\") {
-                            if (isInQuote) {
-                                marks.Add(smark + "," + i);
-                                smark = "";
-                                isInQuote = false;
-                            } else {
-                                smark += i;
-                                isInQuote = true;
-                            }
-                        }
-                        last = replacedCurrentLine.Substring(i, 1);
-                    }
-                    if (isInQuote) {
-                        marks.Add(smark + "," + replacedCurrentLine.Length);
-                    }
-
-
-
-
-                    // 标点符号 
-                    for (int i = 0; i < currentLine.Length; i += 1) {
-                        bool find = false;
-                        foreach (string px in marks) {
-                            string[] pa = px.Split(',');
-                            if (i >= int.Parse(pa[0]) && i < int.Parse(pa[1])) {
-                                find = true;
-                                break;
-                            }
-                        }
-                        if (!find) {
-                            if (currentLine[i] == '+' || currentLine[i] == '-'
-                                || currentLine[i] == '/' || currentLine[i] == '*'
-                                || currentLine[i] == '=' || currentLine[i] == '&'
-                                || currentLine[i] == '^' || currentLine[i] == '<'
-                                || currentLine[i] == '>' || currentLine[i] == '|'
-                                || currentLine[i] == '!' || currentLine[i] == '%') {
-                                tmpTextView.Select(pos + i, 1);
-                                tmpTextView.SelectionColor = SymbolColor;
-                            }
-                        }
-                    }
-
-
-
-
-                    string[] everyWord = replacedCurrentLine.Split(' ', '\t');
-                    int x = 0;
-                    foreach (string currentWord in everyWord) {
-                        if (currentWord.Length < 2) {
-                            x += currentWord.Length + 1;
-                            continue;
-                        } else {
-                            bool find = false;
-
-                            // 判断这个字符串是否被双引号包住
-                            foreach (string px in marks) {
-                                string[] pa = px.Split(',');
-                                if (x >= int.Parse(pa[0]) && x < int.Parse(pa[1])) {
-                                    find = true;
-                                    break;
-                                }
-                            }
-
-                            if (!find) {
-
-                                // 关键字
-                                if (keywords[currentWord] != null) {
-                                    tmpTextView.Select(pos + x, currentWord.Length);
-                                    tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Bold));
-                                    tmpTextView.SelectionColor = KeyWordColor;
-                                }
-
-                                // 常用库函数
-                                if (stantard[currentWord] != null) {
-                                    tmpTextView.Select(pos + x, currentWord.Length);
-                                    tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                                    tmpTextView.SelectionColor = FunctionColor;
-                                }
-                            }
-                            x += currentWord.Length + 1;
-                        }
-                    }
-
-                    // 被引号包住的内容
-                    foreach (string px in marks) {
-                        string[] pa = px.Split(',');
-                        tmpTextView.Select(pos + int.Parse(pa[0]), int.Parse(pa[1]) - int.Parse(pa[0]) + 1);
-                        tmpTextView.SelectionFont = new Font(FontName, FontSize, (FontStyle.Regular));
-                        tmpTextView.SelectionColor = StringColor;
-                    }
-
-                }
-                pos += currentLine.Length + 1;
-                lineNo += 1;
-            }
-            this.TextView.TextChanged -= new EventHandler(TextView_TextChanged);
-            TextView.Rtf = tmpTextView.Rtf;
-            this.TextView.TextChanged += new EventHandler(TextView_TextChanged);
-            TextView.Select(SelectionStart, SelectionLength);
-        }*/
     }
 }

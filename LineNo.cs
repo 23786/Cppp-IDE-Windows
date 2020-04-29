@@ -31,13 +31,13 @@ namespace C____Windows_ {
             //准备画图
             Graphics g = this.panel1.CreateGraphics();
             Font font = new Font(this.TextView.Font, this.TextView.Font.Style);
-            SolidBrush brush = new SolidBrush(NormalCodeColor);
+            SolidBrush brush = new SolidBrush(NormalCodeColor.CurrColor);
 
             //画图开始
             Rectangle rect = this.panel1.ClientRectangle;
             brush.Color = this.panel1.BackColor;
             g.FillRectangle(brush, 0, 0, this.panel1.ClientRectangle.Width, this.panel1.ClientRectangle.Height);
-            brush.Color = NormalCodeColor;
+            brush.Color = NormalCodeColor.CurrColor;
 
             int lineSpace;
 

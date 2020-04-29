@@ -7,19 +7,34 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading;
 
+struct CDColor {
+
+    public Color CurrColor;
+    public Color LightColor;
+    public Color DarkColor;
+
+    public CDColor(Color curr, Color light, Color dark) {
+        CurrColor = curr;
+        LightColor = light;
+        DarkColor = dark;
+    }
+
+}
+
+
 namespace C____Windows_ {
 
     public partial class Form1 : Form {
 
         bool Appearance = false;
         
-        Color NormalCodeColor = Color.Black;
-        Color KeyWordColor = Color.DarkOrange;
-        Color SymbolColor = Color.Blue;
-        Color FunctionColor = Color.Brown;
-        Color PreColor = Color.Purple;
-        Color StringColor = Color.OrangeRed;
-        Color CommentColor = Color.Gray;
+        CDColor NormalCodeColor = new CDColor(Color.Black, Color.Black, Color.White);
+        CDColor KeyWordColor = new CDColor(Color.DarkOrange, Color.DarkOrange, Color.LightBlue);
+        CDColor SymbolColor = new CDColor(Color.Blue, Color.Blue, Color.Pink);
+        CDColor FunctionColor = new CDColor(Color.Brown, Color.Brown, Color.Yellow);
+        CDColor PreColor = new CDColor(Color.Purple, Color.Purple, Color.Orange);
+        CDColor StringColor = new CDColor(Color.OrangeRed, Color.OrangeRed, Color.LightCoral);
+        CDColor CommentColor = new CDColor(Color.Gray, Color.Gray, Color.Gray);
 
 
         void SwitchToDarkMode() {
@@ -76,13 +91,13 @@ namespace C____Windows_ {
             this.MenuBar.BackColor = GrayColor;
             this.MenuBar.ForeColor = Color.White;
 
-            NormalCodeColor = Color.White;
-            PreColor = Color.Orange;
-            KeyWordColor = Color.LightBlue;
-            StringColor = Color.LightCoral;
-            CommentColor = Color.Gray;
-            SymbolColor = Color.Pink;
-            FunctionColor = Color.Yellow;
+            NormalCodeColor.CurrColor = NormalCodeColor.DarkColor;
+            PreColor.CurrColor = PreColor.DarkColor;
+            KeyWordColor.CurrColor = KeyWordColor.DarkColor;
+            StringColor.CurrColor = StringColor.DarkColor;
+            CommentColor.CurrColor = CommentColor.DarkColor;
+            SymbolColor.CurrColor = SymbolColor.DarkColor;
+            FunctionColor.CurrColor = FunctionColor.DarkColor;
 
             RichHighlight(0);
             showLineNo();
@@ -145,13 +160,13 @@ namespace C____Windows_ {
             this.MenuBar.BackColor = LightColor;
             this.MenuBar.ForeColor = Color.Black;
 
-            NormalCodeColor = Color.Black;
-            KeyWordColor = Color.DarkOrange;
-            SymbolColor = Color.Blue;
-            FunctionColor = Color.Brown;
-            PreColor = Color.Purple;
-            StringColor = Color.OrangeRed;
-            CommentColor = Color.Gray;
+            NormalCodeColor.CurrColor = NormalCodeColor.LightColor;
+            PreColor.CurrColor = PreColor.LightColor;
+            KeyWordColor.CurrColor = KeyWordColor.LightColor;
+            StringColor.CurrColor = StringColor.LightColor;
+            CommentColor.CurrColor = CommentColor.LightColor;
+            SymbolColor.CurrColor = SymbolColor.LightColor;
+            FunctionColor.CurrColor = FunctionColor.LightColor;
 
             RichHighlight(0);
             showLineNo();

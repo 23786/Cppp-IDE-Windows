@@ -8,3 +8,4 @@ C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\bin\Debug\
 C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C+++(Windows).exe
 C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C+++(Windows).pdb
 C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C+++(Windows).csprojAssemblyReference.cache
+C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C____Windows_.Preferences.resources
