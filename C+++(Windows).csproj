@@ -70,6 +70,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ConfigFile.cs" />
     <Compile Include="DarkMode.cs">
       <SubType>Form</SubType>

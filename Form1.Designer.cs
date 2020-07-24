@@ -94,10 +94,11 @@
             this.CompileInfo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.CompileInfo.Font = new System.Drawing.Font("Consolas", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompileInfo.ForeColor = System.Drawing.Color.Black;
-            this.CompileInfo.Location = new System.Drawing.Point(12, 752);
+            this.CompileInfo.Location = new System.Drawing.Point(2, 368);
+            this.CompileInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CompileInfo.Name = "CompileInfo";
             this.CompileInfo.ReadOnly = true;
-            this.CompileInfo.Size = new System.Drawing.Size(1130, 265);
+            this.CompileInfo.Size = new System.Drawing.Size(432, 102);
             this.CompileInfo.TabIndex = 7;
             this.CompileInfo.Text = "";
             // 
@@ -108,9 +109,10 @@
             this.CompileButton.FlatAppearance.BorderSize = 0;
             this.CompileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CompileButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CompileButton.Location = new System.Drawing.Point(1167, 154);
+            this.CompileButton.Location = new System.Drawing.Point(445, 77);
+            this.CompileButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CompileButton.Name = "CompileButton";
-            this.CompileButton.Size = new System.Drawing.Size(380, 83);
+            this.CompileButton.Size = new System.Drawing.Size(190, 42);
             this.CompileButton.TabIndex = 1;
             this.CompileButton.Text = "Compile and Run";
             this.CompileButton.UseVisualStyleBackColor = false;
@@ -124,23 +126,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextView.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextView.Location = new System.Drawing.Point(64, 61);
+            this.TextView.Location = new System.Drawing.Point(32, 30);
+            this.TextView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextView.Name = "TextView";
-            this.TextView.Size = new System.Drawing.Size(1078, 667);
+            this.TextView.Size = new System.Drawing.Size(402, 334);
             this.TextView.TabIndex = 0;
             this.TextView.Text = "";
             this.TextView.WordWrap = false;
-            this.TextView.SelectionChanged += new System.EventHandler(this.TextView_SelectionChanged);
             this.TextView.VScroll += new System.EventHandler(this.TextView_VScroll);
             this.TextView.Click += new System.EventHandler(this.TextView_Click);
             this.TextView.TextChanged += new System.EventHandler(this.TextView_TextChanged);
-            this.TextView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextView_KeyDown);
             this.TextView.Resize += new System.EventHandler(this.TextView_Resize);
             // 
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.White;
-            this.MenuBar.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MenuBar.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainMenuBarItem,
@@ -151,7 +151,8 @@
             this.helpToolStripMenuItem});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(1574, 39);
+            this.MenuBar.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
+            this.MenuBar.Size = new System.Drawing.Size(642, 24);
             this.MenuBar.TabIndex = 5;
             this.MenuBar.Text = "MenuBar";
             // 
@@ -163,13 +164,13 @@
             this.HideMenuBarItem,
             this.QuitMenuBarItem});
             this.MainMenuBarItem.Name = "MainMenuBarItem";
-            this.MainMenuBarItem.Size = new System.Drawing.Size(104, 35);
+            this.MainMenuBarItem.Size = new System.Drawing.Size(55, 22);
             this.MainMenuBarItem.Text = "C+++";
             // 
             // AboutMenuBarItem
             // 
             this.AboutMenuBarItem.Name = "AboutMenuBarItem";
-            this.AboutMenuBarItem.Size = new System.Drawing.Size(378, 44);
+            this.AboutMenuBarItem.Size = new System.Drawing.Size(193, 22);
             this.AboutMenuBarItem.Text = "About C+++";
             this.AboutMenuBarItem.Click += new System.EventHandler(this.AboutMenuBarItem_Click);
             // 
@@ -177,14 +178,14 @@
             // 
             this.PreferencesMenuBarItem.Name = "PreferencesMenuBarItem";
             this.PreferencesMenuBarItem.ShortcutKeyDisplayString = "Ctrl+,";
-            this.PreferencesMenuBarItem.Size = new System.Drawing.Size(378, 44);
+            this.PreferencesMenuBarItem.Size = new System.Drawing.Size(193, 22);
             this.PreferencesMenuBarItem.Text = "Preferences...";
             this.PreferencesMenuBarItem.Click += new System.EventHandler(this.PreferencesMenuBarItem_Click);
             // 
             // HideMenuBarItem
             // 
             this.HideMenuBarItem.Name = "HideMenuBarItem";
-            this.HideMenuBarItem.Size = new System.Drawing.Size(378, 44);
+            this.HideMenuBarItem.Size = new System.Drawing.Size(193, 22);
             this.HideMenuBarItem.Text = "Hide";
             this.HideMenuBarItem.Click += new System.EventHandler(this.HideMenuBarItem_Click);
             // 
@@ -192,7 +193,7 @@
             // 
             this.QuitMenuBarItem.Name = "QuitMenuBarItem";
             this.QuitMenuBarItem.ShortcutKeyDisplayString = "Ctrl+Q";
-            this.QuitMenuBarItem.Size = new System.Drawing.Size(378, 44);
+            this.QuitMenuBarItem.Size = new System.Drawing.Size(193, 22);
             this.QuitMenuBarItem.Text = "Quit";
             this.QuitMenuBarItem.Click += new System.EventHandler(this.QuitMenuBarItem_Click);
             // 
@@ -205,14 +206,14 @@
             this.SaveAsMenuBarItem});
             this.FileMenuBarItem.Name = "FileMenuBarItem";
             this.FileMenuBarItem.ShowShortcutKeys = false;
-            this.FileMenuBarItem.Size = new System.Drawing.Size(73, 35);
+            this.FileMenuBarItem.Size = new System.Drawing.Size(39, 22);
             this.FileMenuBarItem.Text = "File";
             // 
             // NewFileMenuBarItem
             // 
             this.NewFileMenuBarItem.Name = "NewFileMenuBarItem";
             this.NewFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+N";
-            this.NewFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.NewFileMenuBarItem.Size = new System.Drawing.Size(178, 22);
             this.NewFileMenuBarItem.Text = "New File";
             this.NewFileMenuBarItem.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
             // 
@@ -220,7 +221,7 @@
             // 
             this.OpenFileMenuBarItem.Name = "OpenFileMenuBarItem";
             this.OpenFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+O";
-            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.OpenFileMenuBarItem.Size = new System.Drawing.Size(178, 22);
             this.OpenFileMenuBarItem.Text = "Open File";
             this.OpenFileMenuBarItem.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
             // 
@@ -228,7 +229,7 @@
             // 
             this.SaveFileMenuBarItem.Name = "SaveFileMenuBarItem";
             this.SaveFileMenuBarItem.ShortcutKeyDisplayString = "Ctrl+S";
-            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.SaveFileMenuBarItem.Size = new System.Drawing.Size(178, 22);
             this.SaveFileMenuBarItem.Text = "Save File";
             this.SaveFileMenuBarItem.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
             // 
@@ -236,7 +237,7 @@
             // 
             this.SaveAsMenuBarItem.Name = "SaveAsMenuBarItem";
             this.SaveAsMenuBarItem.ShortcutKeyDisplayString = "";
-            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.SaveAsMenuBarItem.Size = new System.Drawing.Size(178, 22);
             this.SaveAsMenuBarItem.Text = "Save As";
             this.SaveAsMenuBarItem.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
             // 
@@ -250,42 +251,42 @@
             this.CutMenuBarItem});
             this.EditMenuBarItem.Name = "EditMenuBarItem";
             this.EditMenuBarItem.ShowShortcutKeys = false;
-            this.EditMenuBarItem.Size = new System.Drawing.Size(77, 35);
+            this.EditMenuBarItem.Size = new System.Drawing.Size(42, 22);
             this.EditMenuBarItem.Text = "Edit";
             // 
             // CopyMenuBarItem
             // 
             this.CopyMenuBarItem.Name = "CopyMenuBarItem";
             this.CopyMenuBarItem.ShowShortcutKeys = false;
-            this.CopyMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.CopyMenuBarItem.Size = new System.Drawing.Size(108, 22);
             this.CopyMenuBarItem.Text = "Copy";
             this.CopyMenuBarItem.Click += new System.EventHandler(this.CopyMenuBarItem_Click);
             // 
             // PasteMenuBarItem
             // 
             this.PasteMenuBarItem.Name = "PasteMenuBarItem";
-            this.PasteMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.PasteMenuBarItem.Size = new System.Drawing.Size(108, 22);
             this.PasteMenuBarItem.Text = "Paste";
             this.PasteMenuBarItem.Click += new System.EventHandler(this.PasteMenuBarItem_Click);
             // 
             // UndoMenuBarItem
             // 
             this.UndoMenuBarItem.Name = "UndoMenuBarItem";
-            this.UndoMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.UndoMenuBarItem.Size = new System.Drawing.Size(108, 22);
             this.UndoMenuBarItem.Text = "Undo";
             this.UndoMenuBarItem.Click += new System.EventHandler(this.UndoMenuBarItem_Click);
             // 
             // RedoMenuBarItem
             // 
             this.RedoMenuBarItem.Name = "RedoMenuBarItem";
-            this.RedoMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.RedoMenuBarItem.Size = new System.Drawing.Size(108, 22);
             this.RedoMenuBarItem.Text = "Redo";
             this.RedoMenuBarItem.Click += new System.EventHandler(this.RedoMenuBarItem_Click);
             // 
             // CutMenuBarItem
             // 
             this.CutMenuBarItem.Name = "CutMenuBarItem";
-            this.CutMenuBarItem.Size = new System.Drawing.Size(210, 44);
+            this.CutMenuBarItem.Size = new System.Drawing.Size(108, 22);
             this.CutMenuBarItem.Text = "Cut";
             this.CutMenuBarItem.Click += new System.EventHandler(this.CutMenuBarItem_Click);
             // 
@@ -294,13 +295,13 @@
             this.ViewMenuBarItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChooseFontMenuBarItem});
             this.ViewMenuBarItem.Name = "ViewMenuBarItem";
-            this.ViewMenuBarItem.Size = new System.Drawing.Size(89, 35);
+            this.ViewMenuBarItem.Size = new System.Drawing.Size(47, 22);
             this.ViewMenuBarItem.Text = "View";
             // 
             // ChooseFontMenuBarItem
             // 
             this.ChooseFontMenuBarItem.Name = "ChooseFontMenuBarItem";
-            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(359, 44);
+            this.ChooseFontMenuBarItem.Size = new System.Drawing.Size(158, 22);
             this.ChooseFontMenuBarItem.Text = "Choose a font";
             this.ChooseFontMenuBarItem.Click += new System.EventHandler(this.ChooseFontMenuBarItem_Click);
             // 
@@ -311,27 +312,27 @@
             this.CompileMenuBarItem,
             this.RunMenuBarItem});
             this._CompileMenuBarItem.Name = "_CompileMenuBarItem";
-            this._CompileMenuBarItem.Size = new System.Drawing.Size(128, 35);
+            this._CompileMenuBarItem.Size = new System.Drawing.Size(68, 22);
             this._CompileMenuBarItem.Text = "Compile";
             // 
             // CompileAndRunMenuBarItem
             // 
             this.CompileAndRunMenuBarItem.Name = "CompileAndRunMenuBarItem";
-            this.CompileAndRunMenuBarItem.Size = new System.Drawing.Size(450, 44);
+            this.CompileAndRunMenuBarItem.Size = new System.Drawing.Size(229, 22);
             this.CompileAndRunMenuBarItem.Text = "Compile and Run (Default)";
             this.CompileAndRunMenuBarItem.Click += new System.EventHandler(this.CompileAndRunMenuBarItem_Click);
             // 
             // CompileMenuBarItem
             // 
             this.CompileMenuBarItem.Name = "CompileMenuBarItem";
-            this.CompileMenuBarItem.Size = new System.Drawing.Size(450, 44);
+            this.CompileMenuBarItem.Size = new System.Drawing.Size(229, 22);
             this.CompileMenuBarItem.Text = "Compile";
             this.CompileMenuBarItem.Click += new System.EventHandler(this.CompileMenuBarItem_Click);
             // 
             // RunMenuBarItem
             // 
             this.RunMenuBarItem.Name = "RunMenuBarItem";
-            this.RunMenuBarItem.Size = new System.Drawing.Size(450, 44);
+            this.RunMenuBarItem.Size = new System.Drawing.Size(229, 22);
             this.RunMenuBarItem.Text = "Run";
             this.RunMenuBarItem.Click += new System.EventHandler(this.RunMenuBarItem_Click);
             // 
@@ -341,20 +342,20 @@
             this.GitHubMenuBarItem,
             this.WebsiteMenuBarItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(88, 35);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // GitHubMenuBarItem
             // 
             this.GitHubMenuBarItem.Name = "GitHubMenuBarItem";
-            this.GitHubMenuBarItem.Size = new System.Drawing.Size(463, 44);
+            this.GitHubMenuBarItem.Size = new System.Drawing.Size(235, 22);
             this.GitHubMenuBarItem.Text = "View this project on GitHub";
             this.GitHubMenuBarItem.Click += new System.EventHandler(this.GitHubMenuBarItem_Click);
             // 
             // WebsiteMenuBarItem
             // 
             this.WebsiteMenuBarItem.Name = "WebsiteMenuBarItem";
-            this.WebsiteMenuBarItem.Size = new System.Drawing.Size(463, 44);
+            this.WebsiteMenuBarItem.Size = new System.Drawing.Size(235, 22);
             this.WebsiteMenuBarItem.Text = "View the website of C+++";
             this.WebsiteMenuBarItem.Click += new System.EventHandler(this.WebsiteMenuBarItem_Click);
             // 
@@ -374,9 +375,10 @@
             // 
             this.FileNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FileNameLabel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FileNameLabel.Location = new System.Drawing.Point(1163, 61);
+            this.FileNameLabel.Location = new System.Drawing.Point(443, 30);
+            this.FileNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FileNameLabel.Name = "FileNameLabel";
-            this.FileNameLabel.Size = new System.Drawing.Size(385, 36);
+            this.FileNameLabel.Size = new System.Drawing.Size(192, 18);
             this.FileNameLabel.TabIndex = 6;
             this.FileNameLabel.Text = "Untitled";
             // 
@@ -387,10 +389,11 @@
             this.StatusBar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.StatusBar.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.StatusBar.ForeColor = System.Drawing.Color.Black;
-            this.StatusBar.Location = new System.Drawing.Point(1166, 103);
+            this.StatusBar.Location = new System.Drawing.Point(444, 52);
+            this.StatusBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StatusBar.Multiline = true;
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(380, 43);
+            this.StatusBar.Size = new System.Drawing.Size(190, 22);
             this.StatusBar.TabIndex = 8;
             this.StatusBar.Text = "0 Lines | 0 Characters";
             // 
@@ -398,9 +401,10 @@
             // 
             this.SmallLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SmallLabel.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SmallLabel.Location = new System.Drawing.Point(1200, 969);
+            this.SmallLabel.Location = new System.Drawing.Point(600, 570);
+            this.SmallLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SmallLabel.Name = "SmallLabel";
-            this.SmallLabel.Size = new System.Drawing.Size(322, 43);
+            this.SmallLabel.Size = new System.Drawing.Size(161, 22);
             this.SmallLabel.TabIndex = 9;
             this.SmallLabel.Text = "C+++ For Windows 1.0.0";
             this.SmallLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,9 +416,10 @@
             this.CompilerTextBox.BackColor = System.Drawing.Color.White;
             this.CompilerTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CompilerTextBox.Font = new System.Drawing.Font("微软雅黑", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CompilerTextBox.Location = new System.Drawing.Point(1166, 250);
+            this.CompilerTextBox.Location = new System.Drawing.Point(444, 125);
+            this.CompilerTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CompilerTextBox.Name = "CompilerTextBox";
-            this.CompilerTextBox.Size = new System.Drawing.Size(146, 35);
+            this.CompilerTextBox.Size = new System.Drawing.Size(74, 21);
             this.CompilerTextBox.TabIndex = 11;
             this.CompilerTextBox.Text = "g++.exe";
             this.CompilerTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -424,9 +429,10 @@
             this.NewFileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NewFileLabel.AutoSize = true;
             this.NewFileLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.NewFileLabel.Location = new System.Drawing.Point(1308, 343);
+            this.NewFileLabel.Location = new System.Drawing.Point(515, 172);
+            this.NewFileLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NewFileLabel.Name = "NewFileLabel";
-            this.NewFileLabel.Size = new System.Drawing.Size(129, 36);
+            this.NewFileLabel.Size = new System.Drawing.Size(66, 20);
             this.NewFileLabel.TabIndex = 14;
             this.NewFileLabel.Text = "New File";
             this.NewFileLabel.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
@@ -437,10 +443,11 @@
             this.NewFileExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.NewFileExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewFileExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NewFileExplanation.Location = new System.Drawing.Point(1313, 383);
+            this.NewFileExplanation.Location = new System.Drawing.Point(517, 192);
+            this.NewFileExplanation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewFileExplanation.Multiline = true;
             this.NewFileExplanation.Name = "NewFileExplanation";
-            this.NewFileExplanation.Size = new System.Drawing.Size(190, 69);
+            this.NewFileExplanation.Size = new System.Drawing.Size(95, 34);
             this.NewFileExplanation.TabIndex = 20;
             this.NewFileExplanation.Text = "Create a new C++ source file\r\n";
             this.NewFileExplanation.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
@@ -454,9 +461,10 @@
             this.NewFileBgButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.NewFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NewFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NewFileBgButton.Location = new System.Drawing.Point(1166, 328);
+            this.NewFileBgButton.Location = new System.Drawing.Point(444, 164);
+            this.NewFileBgButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewFileBgButton.Name = "NewFileBgButton";
-            this.NewFileBgButton.Size = new System.Drawing.Size(380, 137);
+            this.NewFileBgButton.Size = new System.Drawing.Size(190, 68);
             this.NewFileBgButton.TabIndex = 21;
             this.NewFileBgButton.UseVisualStyleBackColor = false;
             this.NewFileBgButton.Click += new System.EventHandler(this.NewFileMenuBarItem_Click);
@@ -467,10 +475,11 @@
             this.OpenFileExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.OpenFileExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OpenFileExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.OpenFileExplanation.Location = new System.Drawing.Point(1313, 536);
+            this.OpenFileExplanation.Location = new System.Drawing.Point(517, 268);
+            this.OpenFileExplanation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OpenFileExplanation.Multiline = true;
             this.OpenFileExplanation.Name = "OpenFileExplanation";
-            this.OpenFileExplanation.Size = new System.Drawing.Size(218, 69);
+            this.OpenFileExplanation.Size = new System.Drawing.Size(109, 34);
             this.OpenFileExplanation.TabIndex = 24;
             this.OpenFileExplanation.Text = "Open an exsisting C++ file\r\n\r\n";
             this.OpenFileExplanation.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
@@ -480,9 +489,10 @@
             this.OpenFileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenFileLabel.AutoSize = true;
             this.OpenFileLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.OpenFileLabel.Location = new System.Drawing.Point(1308, 496);
+            this.OpenFileLabel.Location = new System.Drawing.Point(515, 248);
+            this.OpenFileLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.OpenFileLabel.Name = "OpenFileLabel";
-            this.OpenFileLabel.Size = new System.Drawing.Size(142, 36);
+            this.OpenFileLabel.Size = new System.Drawing.Size(73, 20);
             this.OpenFileLabel.TabIndex = 22;
             this.OpenFileLabel.Text = "Open File";
             this.OpenFileLabel.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
@@ -494,9 +504,10 @@
             this.OpenFileBgButton.FlatAppearance.BorderSize = 0;
             this.OpenFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OpenFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.OpenFileBgButton.Location = new System.Drawing.Point(1166, 481);
+            this.OpenFileBgButton.Location = new System.Drawing.Point(444, 240);
+            this.OpenFileBgButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OpenFileBgButton.Name = "OpenFileBgButton";
-            this.OpenFileBgButton.Size = new System.Drawing.Size(380, 137);
+            this.OpenFileBgButton.Size = new System.Drawing.Size(190, 68);
             this.OpenFileBgButton.TabIndex = 25;
             this.OpenFileBgButton.UseVisualStyleBackColor = false;
             this.OpenFileBgButton.Click += new System.EventHandler(this.OpenFileMenuBarItem_Click);
@@ -507,10 +518,11 @@
             this.SaveFileExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveFileExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SaveFileExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SaveFileExplanation.Location = new System.Drawing.Point(1313, 688);
+            this.SaveFileExplanation.Location = new System.Drawing.Point(517, 344);
+            this.SaveFileExplanation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveFileExplanation.Multiline = true;
             this.SaveFileExplanation.Name = "SaveFileExplanation";
-            this.SaveFileExplanation.Size = new System.Drawing.Size(190, 69);
+            this.SaveFileExplanation.Size = new System.Drawing.Size(95, 34);
             this.SaveFileExplanation.TabIndex = 28;
             this.SaveFileExplanation.Text = "Save the current C++ file";
             this.SaveFileExplanation.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
@@ -520,9 +532,10 @@
             this.SaveFileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveFileLabel.AutoSize = true;
             this.SaveFileLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.SaveFileLabel.Location = new System.Drawing.Point(1308, 648);
+            this.SaveFileLabel.Location = new System.Drawing.Point(515, 324);
+            this.SaveFileLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SaveFileLabel.Name = "SaveFileLabel";
-            this.SaveFileLabel.Size = new System.Drawing.Size(130, 36);
+            this.SaveFileLabel.Size = new System.Drawing.Size(67, 20);
             this.SaveFileLabel.TabIndex = 26;
             this.SaveFileLabel.Text = "Save File";
             this.SaveFileLabel.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
@@ -534,9 +547,10 @@
             this.SaveFileBgButton.FlatAppearance.BorderSize = 0;
             this.SaveFileBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SaveFileBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SaveFileBgButton.Location = new System.Drawing.Point(1166, 633);
+            this.SaveFileBgButton.Location = new System.Drawing.Point(444, 316);
+            this.SaveFileBgButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveFileBgButton.Name = "SaveFileBgButton";
-            this.SaveFileBgButton.Size = new System.Drawing.Size(380, 137);
+            this.SaveFileBgButton.Size = new System.Drawing.Size(190, 68);
             this.SaveFileBgButton.TabIndex = 29;
             this.SaveFileBgButton.UseVisualStyleBackColor = false;
             this.SaveFileBgButton.Click += new System.EventHandler(this.SaveFileMenuBarItem_Click);
@@ -547,10 +561,11 @@
             this.SaveAsExplanation.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveAsExplanation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SaveAsExplanation.Font = new System.Drawing.Font("微软雅黑 Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SaveAsExplanation.Location = new System.Drawing.Point(1313, 841);
+            this.SaveAsExplanation.Location = new System.Drawing.Point(517, 418);
+            this.SaveAsExplanation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveAsExplanation.Multiline = true;
             this.SaveAsExplanation.Name = "SaveAsExplanation";
-            this.SaveAsExplanation.Size = new System.Drawing.Size(190, 69);
+            this.SaveAsExplanation.Size = new System.Drawing.Size(95, 34);
             this.SaveAsExplanation.TabIndex = 32;
             this.SaveAsExplanation.Text = "Duplicate the current C++ file";
             this.SaveAsExplanation.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
@@ -560,9 +575,10 @@
             this.SaveAsLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveAsLabel.AutoSize = true;
             this.SaveAsLabel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.SaveAsLabel.Location = new System.Drawing.Point(1308, 801);
+            this.SaveAsLabel.Location = new System.Drawing.Point(515, 398);
+            this.SaveAsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SaveAsLabel.Name = "SaveAsLabel";
-            this.SaveAsLabel.Size = new System.Drawing.Size(118, 36);
+            this.SaveAsLabel.Size = new System.Drawing.Size(60, 20);
             this.SaveAsLabel.TabIndex = 30;
             this.SaveAsLabel.Text = "Save As";
             this.SaveAsLabel.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
@@ -574,9 +590,10 @@
             this.SaveAsBgButton.FlatAppearance.BorderSize = 0;
             this.SaveAsBgButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SaveAsBgButton.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SaveAsBgButton.Location = new System.Drawing.Point(1166, 786);
+            this.SaveAsBgButton.Location = new System.Drawing.Point(444, 391);
+            this.SaveAsBgButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveAsBgButton.Name = "SaveAsBgButton";
-            this.SaveAsBgButton.Size = new System.Drawing.Size(380, 137);
+            this.SaveAsBgButton.Size = new System.Drawing.Size(190, 68);
             this.SaveAsBgButton.TabIndex = 33;
             this.SaveAsBgButton.UseVisualStyleBackColor = false;
             this.SaveAsBgButton.Click += new System.EventHandler(this.SaveAsMenuBarItem_Click);
@@ -586,9 +603,10 @@
             this.SaveAsImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveAsImage.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveAsImage.Image = global::C____Windows_.Properties.Resources.DuplicateFile;
-            this.SaveAsImage.Location = new System.Drawing.Point(1184, 800);
+            this.SaveAsImage.Location = new System.Drawing.Point(453, 398);
+            this.SaveAsImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveAsImage.Name = "SaveAsImage";
-            this.SaveAsImage.Size = new System.Drawing.Size(109, 104);
+            this.SaveAsImage.Size = new System.Drawing.Size(54, 52);
             this.SaveAsImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SaveAsImage.TabIndex = 31;
             this.SaveAsImage.TabStop = false;
@@ -599,9 +617,10 @@
             this.SaveFileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
             this.SaveFileImage.Image = global::C____Windows_.Properties.Resources.SaveFile;
-            this.SaveFileImage.Location = new System.Drawing.Point(1184, 647);
+            this.SaveFileImage.Location = new System.Drawing.Point(453, 324);
+            this.SaveFileImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveFileImage.Name = "SaveFileImage";
-            this.SaveFileImage.Size = new System.Drawing.Size(109, 104);
+            this.SaveFileImage.Size = new System.Drawing.Size(54, 52);
             this.SaveFileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SaveFileImage.TabIndex = 27;
             this.SaveFileImage.TabStop = false;
@@ -612,9 +631,10 @@
             this.OpenFileImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
             this.OpenFileImage.Image = global::C____Windows_.Properties.Resources.OpenFile;
-            this.OpenFileImage.Location = new System.Drawing.Point(1184, 495);
+            this.OpenFileImage.Location = new System.Drawing.Point(453, 248);
+            this.OpenFileImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OpenFileImage.Name = "OpenFileImage";
-            this.OpenFileImage.Size = new System.Drawing.Size(109, 104);
+            this.OpenFileImage.Size = new System.Drawing.Size(54, 52);
             this.OpenFileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.OpenFileImage.TabIndex = 23;
             this.OpenFileImage.TabStop = false;
@@ -626,9 +646,10 @@
             this.NewFileImage.BackColor = System.Drawing.SystemColors.ControlLight;
             this.NewFileImage.BackgroundImage = global::C____Windows_.Properties.Resources.NewFile;
             this.NewFileImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NewFileImage.Location = new System.Drawing.Point(1184, 342);
+            this.NewFileImage.Location = new System.Drawing.Point(453, 171);
+            this.NewFileImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewFileImage.Name = "NewFileImage";
-            this.NewFileImage.Size = new System.Drawing.Size(109, 104);
+            this.NewFileImage.Size = new System.Drawing.Size(54, 52);
             this.NewFileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.NewFileImage.TabIndex = 16;
             this.NewFileImage.TabStop = false;
@@ -646,9 +667,10 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(5, 61);
+            this.panel1.Location = new System.Drawing.Point(2, 30);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(53, 667);
+            this.panel1.Size = new System.Drawing.Size(26, 334);
             this.panel1.TabIndex = 34;
             // 
             // ChangeAppearanceButton
@@ -659,20 +681,21 @@
             this.ChangeAppearanceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ChangeAppearanceButton.FlatAppearance.BorderSize = 0;
             this.ChangeAppearanceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChangeAppearanceButton.Location = new System.Drawing.Point(1498, 250);
+            this.ChangeAppearanceButton.Location = new System.Drawing.Point(611, 126);
+            this.ChangeAppearanceButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ChangeAppearanceButton.Name = "ChangeAppearanceButton";
-            this.ChangeAppearanceButton.Size = new System.Drawing.Size(48, 35);
+            this.ChangeAppearanceButton.Size = new System.Drawing.Size(24, 18);
             this.ChangeAppearanceButton.TabIndex = 35;
             this.ChangeAppearanceButton.UseVisualStyleBackColor = false;
             this.ChangeAppearanceButton.Click += new System.EventHandler(this.ChangeAppearanceButton_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1574, 1029);
+            this.ClientSize = new System.Drawing.Size(642, 476);
             this.Controls.Add(this.ChangeAppearanceButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SaveAsExplanation);
@@ -702,7 +725,8 @@
             this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuBar;
-            this.MinimumSize = new System.Drawing.Size(1600, 1100);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(647, 407);
             this.Name = "Form1";
             this.Text = "Untitled";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

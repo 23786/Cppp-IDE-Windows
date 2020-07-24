@@ -8,3 +8,14 @@ C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\bin\Debug\
 C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C+++(Windows).exe
 C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C+++(Windows).pdb
 C:\Users\Apple\Desktop\Developer\Visual Studio Projects\C+++(Windows)\obj\Debug\C____Windows_.Preferences.resources
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\bin\Debug\C+++(Windows).exe.config
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\bin\Debug\C+++(Windows).exe
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\bin\Debug\C+++(Windows).pdb
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C+++(Windows).csprojAssemblyReference.cache
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C____Windows_.Form1.resources
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C____Windows_.Preferences.resources
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C____Windows_.Properties.Resources.resources
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C+++(Windows).csproj.GenerateResource.cache
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C+++(Windows).csproj.CoreCompileInputs.cache
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C+++(Windows).exe
+C:\Users\apple\Desktop\Developer\Cppp-IDE-Windows\obj\Debug\C+++(Windows).pdb

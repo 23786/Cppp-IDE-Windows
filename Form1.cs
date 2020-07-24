@@ -265,82 +265,7 @@ namespace C____Windows_ {
             
         }
 
-        // KeyDown()
-        private void TextView_KeyDown(object sender, KeyEventArgs e) {
-
-            int Count(string a, string substr) {
-                string replacedStr = a.Replace(substr, "");
-                return (a.Length - replacedStr.Length) / substr.Length;
-            }
-
-            int Match(string str, string a) {
-                int _cnt = 0;
-                int times = str.Length > a.Length ? a.Length : str.Length;
-                for (int i = 0; i < times; i += 1) {
-                    if (str[i] == a[i]) {
-                        _cnt += 1;
-                    } else {
-                        return _cnt;
-                    }
-                }
-                return _cnt;
-            }
-
-            // 自动缩进
-            if (e.KeyData == Keys.Enter) {
-                int location = TextView.SelectionStart;
-                string a = TextView.Text.Substring(0, location);
-                int b = Count(a, "{") - Count(a, "}");
-                insertText(TextView, "\n");
-                for (int i = 1; i <= b; i += 1) {
-                    insertText(TextView, "\t");
-                }
-                e.Handled = true;
-                return;
-            }
-
-            // 自动补全提示
-            try {
-                var array = TextView.Text.Substring(0, TextView.SelectionStart).Split('\n', '\t', ' ', '(', ')', '[', ']', '{', '}', ';', ':');
-                currWord = array[array.Length - 1];
-            } catch {
-                return;
-            }
-            Control[] controls = TextView.Controls.Find("__",false);
-            if (controls.Length > 0)
-                controls[0].Dispose();
-            ListBox ListBox = new ListBox();
-            ListBox.Name = "__";
-            ListBox.TabIndex = 100;
-            ListBox.Location = TextView.GetPositionFromCharIndex(TextView.SelectionStart);
-            ListBox.Height = 200; ListBox.Width = 200;
-            ListBox.BackColor = System.Drawing.Color.Black; ListBox.ForeColor = System.Drawing.Color.White;
-            ListBox.Font = new Font("Microsoft Yahei UI", 8.0F, FontStyle.Regular);
-            ListBox.Click += HintListClicked;
-            var cnt = 0;
-            foreach (string key in completion) {
-                if (Match(key, currWord.Replace("(", "").Replace(")", "")) >= currWord.Length && currWord.Length >= 3) {
-                    ListBox.Items.Add(key);
-                    cnt += 1;
-                }
-            }
-            if (cnt >= 1) {
-                ListBox.Left += 20;
-                ListBox.Show();
-                TextView.Controls.Add(ListBox);
-            }
-        }
-        private string currWord = "";
-        private void HintListClicked(object sender, EventArgs a) {
-            var lb = (ListBox)sender;
-            string title = lb.SelectedItem.ToString();
-            try {
-                insertText(TextView, title.Substring(currWord.Length, title.Length - currWord.Length));
-            } catch {
-
-            }
-            lb.Dispose();
-        }
+       
         private void insertText(RichTextBox TextBox, string a) {
             int i = TextBox.SelectionStart;
             TextBox.Focus();
@@ -396,20 +321,6 @@ namespace C____Windows_ {
             showLineNo();
         }
 
-        private void TextView_Click(object sender, EventArgs e) {
-            Control[] controls = TextView.Controls.Find("__", false);
-            if (controls.Length > 0)
-                controls[0].Dispose();
-        }
-
-        private void TextView_SelectionChanged(object sender, EventArgs e) {
-            try {
-                var array = TextView.Text.Substring(0, TextView.SelectionStart).Split('\n','\t', ' ', '(', ')', '[', ']', '{', '}', ';', ':');
-                currWord = array[array.Length - 1];
-            } catch {
-                return;
-            }
-        }
 
         private void GitHubMenuBarItem_Click(object sender, EventArgs e) {
             Process.Start("https://GitHub.com/23786/Cppp-IDE-Windows");
